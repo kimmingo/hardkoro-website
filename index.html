@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HardKoro — Canto collettivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #0e0e0e;
+  --white:   #f5f2ec;
+  --warm:    #e8e3d9;
+  --blue:    #0000ff;
+  --blue-dk: #0000cc;
+  --mid:     #6b6560;
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: rgba(14,14,14,0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+/* Logo placeholder — swap with <img src="HARDKORO_H.svg"> when available */
+.nav-logo-svg {
+  height: 34px; /* matches hamburger visual height */
+  width: auto;
+  display: block;
+}
+
+.nav-logo-svg text {
+  font-family: var(--serif);
+  font-weight: 700;
+  fill: var(--white);
+  letter-spacing: 0.15em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: none; /* hidden on mobile */
+  list-style: none;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  display: none; /* hidden on mobile */
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(245,242,236,0.45);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+/* Hamburger */
+.nav-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu drawer */
+.nav-mobile-menu {
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  z-index: 190;
+  background: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem 1.5rem;
+  gap: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.38s cubic-bezier(.4,0,.2,1), opacity 0.25s, padding 0.3s;
+  pointer-events: none;
+}
+.nav-mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0.5rem 1.5rem 2rem;
+  pointer-events: auto;
+}
+.nav-mobile-menu a {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.8);
+  text-decoration: none;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: color 0.2s;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a.nav-cta {
+  display: block;
+  border: 1px solid rgba(245,242,236,0.4);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  color: var(--white);
+}
+
+/* ── SECTION 1: HERO ── */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1.5rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  background: #1a1510; /* dark fallback */
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Drop-in: replace src with HardKoro05_Credits_Alvise_Tedesco.png */
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%; /* keeps faces in frame on mobile portrait crop */
+  display: block;
+}
+
+/* placeholder bg when no image */
+.hero-bg-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #1a1510 0%, #2a1f15 50%, #0e0e0e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-bg-placeholder span {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(14,14,14,0.2) 0%,
+    rgba(14,14,14,0.0) 30%,
+    rgba(14,14,14,0.55) 70%,
+    rgba(14,14,14,0.88) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 0.5em;
+}
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(245,242,236,0.85);
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
+
+/* ── SECTION 2: COME FUNZIONA ── */
+#come-funziona {
+  padding: 4.5rem 1.5rem;
+  background: var(--white);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 3rem;
+}
+
+.section-body {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--black);
+  max-width: 680px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* stacked on mobile */
+  gap: 0;
+}
+
+.step-card {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(14,14,14,0.1);
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+.step-card:last-child { border-bottom: 1px solid rgba(14,14,14,0.1); }
+
+.step-num {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue);
+  padding-top: 0.1em;
+}
+
+.step-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.step-body {
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ── SECTION 3: DATE ── */
+#date {
+  padding: 4.5rem 1.5rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+#date .section-title { color: var(--white); }
+
+.dates-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dates-header {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 0 1.5rem;
+  padding: 0 0 0.75rem;
+  border-bottom: 1px solid rgba(245,242,236,0.2);
+  margin-bottom: 0;
+}
+.dates-header span {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.35);
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 0 1.5rem;
+  align-items: center;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(245,242,236,0.08);
+  transition: background 0.15s;
+}
+.date-row:hover { background: rgba(255,255,255,0.03); }
+
+.col-date {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.date-day {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.35);
+}
+.date-num {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.col-place {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.date-city {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+.date-venue {
+  font-size: 0.78rem;
+  color: rgba(245,242,236,0.45);
+  letter-spacing: 0.03em;
+}
+
+.col-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-ticket {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.5rem 1.1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-ticket:hover { background: var(--blue-dk); }
+
+.btn-sold-out {
+  background: transparent;
+  color: rgba(245,242,236,0.35);
+  border: 1px solid rgba(245,242,236,0.15);
+  cursor: default;
+  pointer-events: none;
+  letter-spacing: 0.08em;
+}
+
+.row-sold-out .date-city,
+.row-sold-out .date-num {
+  opacity: 0.4;
+}
+
+.events-loading {
+  padding: 2rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.3);
+}
+.events-error {
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: rgba(245,242,236,0.4);
+}
+.events-empty {
+  padding: 2rem 0;
+  font-size: 0.85rem;
+  color: rgba(245,242,236,0.4);
+}
+
+.dates-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* ── SECTION 4: VIDEO ── */
+#action {
+  padding: 4.5rem 1.5rem;
+  background: var(--warm);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* stacked on mobile */
+  gap: 1.75rem;
+}
+
+.video-card { }
+
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #1a1510;
+}
+.video-embed iframe,
+.video-embed .video-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+.video-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.video-placeholder svg {
+  width: 36px;
+  height: 36px;
+  opacity: 0.4;
+}
+
+.video-city {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-top: 0.85rem;
+}
+
+.video-more {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.video-more a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+.video-more a:hover { opacity: 0.5; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem 1.5rem 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.footer-brand-line {
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.45);
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-links a {
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.6);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--white); }
+.social-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.footer-email {
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.45);
+  margin-top: 1.25rem;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  font-size: 0.7rem;
+  color: rgba(245,242,236,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* ── RESPONSIVE: TABLET + ── */
+@media (min-width: 640px) {
+  .nav-mobile-menu { max-height: 0 !important; opacity: 0 !important; pointer-events: none !important; padding: 0 !important; }
+  .nav-hamburger { display: none; }
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-block; }
+
+  #hero { padding: 0 2.5rem 5rem; }
+
+  .steps-grid { grid-template-columns: repeat(3, 1fr); gap: 0 2rem; }
+  .step-card { border-top: 1px solid rgba(14,14,14,0.1); grid-template-columns: 1fr; }
+  .step-num { margin-bottom: 0.5rem; }
+
+  .video-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+
+  section, #come-funziona, #date, #action {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  footer { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+
+@media (min-width: 900px) {
+  nav { padding: 0 4rem; }
+  #hero { padding: 0 4rem 6rem; }
+  #come-funziona, #date, #action { padding-left: 4rem; padding-right: 4rem; }
+  footer { padding-left: 4rem; padding-right: 4rem; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
+    <!--
+      Replace with:
+      <img src="HARDKORO_H.svg" class="nav-logo-svg" alt="HardKoro">
+      OR the inline SVG markup.
+      The placeholder below keeps layout intact until the file is dropped in.
+    -->
+    <svg class="nav-logo-svg" viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="34" fill="none"/>
+      <text x="0" y="26" font-family="'Playfair Display', Georgia, serif" font-weight="700"
+        font-size="24" fill="#f5f2ec" letter-spacing="5">HARDKORO</text>
+    </svg>
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="singbuilding.html">SingBuilding</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="#date" class="nav-cta">Prossime date</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="about.html">About</a>
+  <a href="singbuilding.html">SingBuilding</a>
+  <a href="contact.html">Contact</a>
+  <a href="#date" class="nav-cta">Prossime date</a>
+</div>
+
+
+<!-- ── SECTION 1: HERO ── -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="HardKoro05_Credits_Alvise_Tedesco.png" alt="HardKoro — coro pop-up">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-headline">
+      Un coro pop-up.<br>
+      <em>Ti presenti. Il Maestro guida. Tu canti.</em>
+    </h1>
+    <a href="#date" class="btn-primary">Prossime date →</a>
+  </div>
+</section>
+
+
+<!-- ── SECTION 2: COME FUNZIONA ── -->
+<section id="come-funziona">
+  <h2 class="section-title">
+    Nessuna prova.<br>
+    Nessun pubblico.<br>
+    Chi c'è, viene per cantare.
+  </h2>
+
+  <p class="section-body">HardKoro trasforma una stanza piena di sconosciuti in un coro enorme e inarrestabile — e sì, anche tu ne fai parte. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque), e preparati a cantare come se non ti vedesse nessuno.</p>
+</section>
+
+
+<!-- ── SECTION 3: PROSSIME DATE ── -->
+<section id="date">
+  <h2 class="section-title">Vieni a cantare</h2>
+
+  <div class="dates-list">
+    <div class="dates-header">
+      <span class="col-date">Data</span>
+      <span class="col-place">Città &amp; Venue</span>
+      <span class="col-btn"></span>
+    </div>
+    <!-- Rows are injected here by loadEvents() -->
+    <div id="events-body">
+      <div class="events-loading">
+        <span>Caricamento date…</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SECTION 4: HARDKORO IN ACTION ── -->
+<section id="action">
+  <h2 class="section-title">HardKoro in action</h2>
+
+  <div class="video-grid">
+    <!-- Swap .video-placeholder divs with <iframe> YouTube embeds -->
+    <div class="video-card">
+      <div class="video-embed">
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>YouTube embed</span>
+        </div>
+      </div>
+      <div class="video-city">Milano</div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>YouTube embed</span>
+        </div>
+      </div>
+      <div class="video-city">Roma</div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <div class="video-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>YouTube embed</span>
+        </div>
+      </div>
+      <div class="video-city">Bologna</div>
+    </div>
+  </div>
+
+  <div class="video-more">
+    <a href="https://youtube.com/@hardkoro" target="_blank" rel="noopener">
+      Guarda tutti i video su YouTube ↗
+    </a>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer-brand-name">HardKoro</div>
+      <p class="footer-brand-line">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
+    </div>
+
+    <div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="singbuilding.html">SingBuilding</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#date">Prossime date</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-social">
+        <a href="#">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="#">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+          </svg>
+          YouTube
+        </a>
+        <a href="#">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/>
+          </svg>
+          TikTok
+        </a>
+      </div>
+      <div class="footer-email">hello@hardkoro.com</div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © HardKoro — Tutti i diritti riservati.
+  </div>
+</footer>
+
+
+<script>
+  // ── HAMBURGER ──────────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+    });
+  });
+
+
+  // ── EVENTS CMS — Google Sheets ─────────────────────────────
+  //
+  // HOW TO SET UP YOUR GOOGLE SHEET:
+  //
+  // 1. Create a new Google Sheet.
+  //    Add these exact headers in row 1:
+  //      A1: date        (e.g.  2025-05-03)
+  //      B1: city        (e.g.  Milano)
+  //      C1: venue       (e.g.  BASE)
+  //      D1: url         (e.g.  https://dice.fm/event/...)
+  //
+  // 2. Fill in your events from row 2 downward.
+  //    Dates must be in YYYY-MM-DD format (ISO 8601).
+  //    Past events are automatically hidden.
+  //
+  // 3. Publish the sheet as CSV:
+  //    File → Share → Publish to web
+  //    → choose the correct Sheet tab
+  //    → choose "Comma-separated values (.csv)"
+  //    → click Publish
+  //    → copy the URL shown
+  //
+  // 4. Paste that URL below, replacing PASTE_YOUR_CSV_URL_HERE.
+  //
+
+  const SHEET_CSV_URL = 'PASTE_YOUR_CSV_URL_HERE';
+
+  // Italian day/month labels
+  const DAYS_IT  = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+  const MONTHS_IT = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+
+  function formatDate(isoString) {
+    // Parse as local date to avoid UTC-offset surprises
+    const [year, month, day] = isoString.trim().split('-').map(Number);
+    const d = new Date(year, month - 1, day);
+    return {
+      day:   DAYS_IT[d.getDay()],
+      num:   `${day} ${MONTHS_IT[month - 1]}`
+    };
+  }
+
+  function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    if (lines.length < 2) return [];
+    // Skip header row (row 0), parse the rest
+    return lines.slice(1).map(line => {
+      // Handle quoted fields (commas inside quotes)
+      const cols = [];
+      let cur = '', inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') { inQ = !inQ; continue; }
+        if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; continue; }
+        cur += ch;
+      }
+      cols.push(cur.trim());
+      return {
+        date:   cols[0] || '',
+        city:   cols[1] || '',
+        venue:  cols[2] || '',
+        url:    cols[3] || '',
+        status: (cols[4] || '').toLowerCase().trim()
+      };
+    });
+  }
+
+  function renderEvents(events) {
+    const container = document.getElementById('events-body');
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Filter out past events, sort chronologically
+    const upcoming = events
+      .filter(e => {
+        if (!e.date) return false;
+        const [y, m, d] = e.date.split('-').map(Number);
+        return new Date(y, m - 1, d) >= today;
+      })
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    if (upcoming.length === 0) {
+      container.innerHTML = '<p class="events-empty">Nessuna data in programma al momento.<br>Torna presto.</p>';
+      return;
+    }
+
+    container.innerHTML = upcoming.map(e => {
+      const { day, num } = formatDate(e.date);
+      const soldOut = e.status === 'sold_out';
+      const href    = (!soldOut && e.url) ? e.url : null;
+      const target  = href ? 'target="_blank" rel="noopener noreferrer"' : '';
+      const btnClass = soldOut ? 'btn-ticket btn-sold-out' : 'btn-ticket';
+      const btnTag  = href ? 'a' : 'span';
+      const btnHref = href ? `href="${href}"` : '';
+      const btnLabel = soldOut ? 'Sold out' : 'Tickets';
+      return `
+        <div class="date-row${soldOut ? ' row-sold-out' : ''}">
+          <div class="col-date">
+            <span class="date-day">${day}</span>
+            <span class="date-num">${num}</span>
+          </div>
+          <div class="col-place">
+            <span class="date-city">${e.city}</span>
+            <span class="date-venue">${e.venue}</span>
+          </div>
+          <div class="col-btn">
+            <${btnTag} ${btnHref} class="${btnClass}" ${target}>${btnLabel}</${btnTag}>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  async function loadEvents() {
+    const container = document.getElementById('events-body');
+
+    // If the URL hasn't been configured yet, show the placeholder rows
+    if (SHEET_CSV_URL === 'PASTE_YOUR_CSV_URL_HERE') {
+      container.innerHTML = `
+        <div class="date-row">
+          <div class="col-date"><span class="date-day">Sab</span><span class="date-num">3 Mag</span></div>
+          <div class="col-place"><span class="date-city">Milano</span><span class="date-venue">BASE</span></div>
+          <div class="col-btn"><a href="#" class="btn-ticket">Tickets</a></div>
+        </div>
+        <div class="date-row">
+          <div class="col-date"><span class="date-day">Sab</span><span class="date-num">17 Mag</span></div>
+          <div class="col-place"><span class="date-city">Roma</span><span class="date-venue">Monk</span></div>
+          <div class="col-btn"><a href="#" class="btn-ticket">Tickets</a></div>
+        </div>
+        <div class="date-row">
+          <div class="col-date"><span class="date-day">Dom</span><span class="date-num">25 Mag</span></div>
+          <div class="col-place"><span class="date-city">Bologna</span><span class="date-venue">Locomotiv</span></div>
+          <div class="col-btn"><a href="#" class="btn-ticket">Tickets</a></div>
+        </div>
+        <div class="date-row">
+          <div class="col-date"><span class="date-day">Ven</span><span class="date-num">6 Giu</span></div>
+          <div class="col-place"><span class="date-city">Parma</span><span class="date-venue">Colonne28</span></div>
+          <div class="col-btn"><a href="#" class="btn-ticket">Tickets</a></div>
+        </div>`;
+      return;
+    }
+
+    try {
+      const res = await fetch(SHEET_CSV_URL);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      const events = parseCSV(text);
+      renderEvents(events);
+    } catch (err) {
+      console.error('HardKoro events load error:', err);
+      container.innerHTML = '<p class="events-error">Impossibile caricare le date. Riprova più tardi.</p>';
+    }
+  }
+
+  loadEvents();
+</script>
+</body>
+</html>
