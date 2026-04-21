@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — HardKoro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #0e0e0e;
+  --white:   #f5f2ec;
+  --warm:    #e8e3d9;
+  --blue:    #0000ff;
+  --blue-dk: #0000cc;
+  --mid:     #6b6560;
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── NAV (identical to home) ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: rgba(14,14,14,0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+.nav-logo-svg {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 1.75rem;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: var(--white); }
+
+.nav-cta {
+  display: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(245,242,236,0.45);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+.nav-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-mobile-menu {
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  z-index: 190;
+  background: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem 1.5rem;
+  gap: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.38s cubic-bezier(.4,0,.2,1), opacity 0.25s, padding 0.3s;
+  pointer-events: none;
+}
+.nav-mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0.5rem 1.5rem 2rem;
+  pointer-events: auto;
+}
+.nav-mobile-menu a {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.8);
+  text-decoration: none;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: color 0.2s;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a.nav-cta {
+  display: block;
+  border: 1px solid rgba(245,242,236,0.4);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  color: var(--white);
+}
+
+
+/* ── PAGE HEADER ── */
+#page-header {
+  padding: 10rem 1.5rem 4rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+.page-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.35);
+  margin-bottom: 1.5rem;
+}
+
+.page-header-headline {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  max-width: 640px;
+}
+
+.page-header-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(245,242,236,0.7);
+}
+
+
+/* ── SECTION: MISSION ── */
+#mission {
+  padding: 5rem 1.5rem;
+  background: var(--white);
+}
+
+.mission-body {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--black);
+  max-width: 700px;
+}
+
+.mission-body + .mission-body {
+  margin-top: 1.5em;
+}
+
+.mission-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--blue);
+  margin-bottom: 2rem;
+}
+
+
+/* ── SECTION: IL TEAM ── */
+#team {
+  padding: 5rem 1.5rem;
+  background: var(--warm);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 3rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.team-member {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(14,14,14,0.1);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+.team-member:last-child {
+  border-bottom: 1px solid rgba(14,14,14,0.1);
+}
+
+.member-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.member-name {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.member-role {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.member-bio {
+  font-size: 0.9rem;
+  color: var(--mid);
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+/* Avatar initials circle */
+.member-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(14,14,14,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--black);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* When you have a photo, swap .member-avatar with <img class="member-photo"> */
+.member-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+/* ── SECTION: LA SCIENZA ── */
+#scienza {
+  padding: 5rem 1.5rem;
+  background: var(--black);
+  color: var(--white);
+}
+
+#scienza .section-title { color: var(--white); }
+
+.scienza-intro {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(245,242,236,0.8);
+  max-width: 620px;
+  margin-bottom: 4rem;
+}
+
+.science-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.science-card {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(245,242,236,0.1);
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.science-card:last-child {
+  border-bottom: 1px solid rgba(245,242,236,0.1);
+}
+
+.science-icon {
+  padding-top: 0.15em;
+  font-size: 1.4rem;
+  line-height: 1;
+  /* Replace with SVG icons when available */
+}
+
+.science-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.science-body {
+  font-size: 0.9rem;
+  color: rgba(245,242,236,0.55);
+  line-height: 1.65;
+}
+
+.science-cite {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.25);
+}
+
+
+/* ── SECTION: CALLOUT / CTA ── */
+#cta {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+  text-align: center;
+}
+
+.cta-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.cta-sub {
+  font-size: 0.9rem;
+  color: var(--mid);
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--blue-dk); transform: translateY(-1px); }
+
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem 1.5rem 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.footer-brand-line {
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.45);
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-links a {
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.6);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--white); }
+.social-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+.footer-email {
+  font-size: 0.82rem;
+  color: rgba(245,242,236,0.45);
+  margin-top: 1.25rem;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  font-size: 0.7rem;
+  color: rgba(245,242,236,0.25);
+  letter-spacing: 0.05em;
+}
+
+
+/* ── RESPONSIVE ── */
+@media (min-width: 640px) {
+  .nav-mobile-menu { max-height: 0 !important; opacity: 0 !important; pointer-events: none !important; padding: 0 !important; }
+  .nav-hamburger { display: none; }
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-block; }
+
+  #page-header { padding: 12rem 2.5rem 5rem; }
+  #mission, #team, #scienza, #cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+  footer { padding-left: 2.5rem; padding-right: 2.5rem; }
+
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+  .team-member {
+    border-top: 1px solid rgba(14,14,14,0.1);
+    border-bottom: none;
+  }
+  /* bottom border on last two members */
+  .team-member:nth-last-child(-n+2) { border-bottom: 1px solid rgba(14,14,14,0.1); }
+
+  .science-grid { grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+  .science-card { border-top: 1px solid rgba(245,242,236,0.1); }
+  .science-card:nth-last-child(-n+2) { border-bottom: 1px solid rgba(245,242,236,0.1); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  nav { padding: 0 4rem; }
+  #page-header { padding: 12rem 4rem 5rem; }
+  #mission, #team, #scienza, #cta { padding-left: 4rem; padding-right: 4rem; }
+  footer { padding-left: 4rem; padding-right: 4rem; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
+    <svg class="nav-logo-svg" viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="34" fill="none"/>
+      <text x="0" y="26" font-family="'Playfair Display', Georgia, serif" font-weight="700"
+        font-size="24" fill="#f5f2ec" letter-spacing="5">HARDKORO</text>
+    </svg>
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="singbuilding.html">SingBuilding</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="index.html#date" class="nav-cta">Prossime date</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="about.html">About</a>
+  <a href="singbuilding.html">SingBuilding</a>
+  <a href="contact.html">Contact</a>
+  <a href="index.html#date" class="nav-cta">Prossime date</a>
+</div>
+
+
+<!-- ── PAGE HEADER ── -->
+<section id="page-header">
+  <p class="page-label">Chi siamo</p>
+  <h1 class="page-header-headline">
+    Crediamo che cantare insieme<br>
+    <em>cambi qualcosa — dentro e intorno a te.</em>
+  </h1>
+</section>
+
+
+<!-- ── SECTION: MISSION ── -->
+<section id="mission">
+  <div class="mission-rule"></div>
+  <p class="mission-body">
+    HardKoro nasce da un'idea semplice: il canto collettivo non dovrebbe essere un privilegio di chi ha studiato musica. È per tutti — per chi canta stonato sotto la doccia, per chi non ha mai aperto uno spartito, per chi ha voglia di condividere qualcosa di vero con degli sconosciuti.
+  </p>
+  <p class="mission-body" style="margin-top: 1.5em;">
+    Ogni appuntamento è un esperimento sociale. Una stanza, una guida, una canzone da imparare insieme. Non ci sono prove, non c'è pubblico, non c'è giudizio. C'è solo la voce — la tua, quella di tutti gli altri, e il momento in cui diventano una cosa sola.
+  </p>
+</section>
+
+
+<!-- ── SECTION: IL TEAM ── -->
+<section id="team">
+  <h2 class="section-title">Il team</h2>
+
+  <div class="team-grid">
+
+    <!--
+      HOW TO POPULATE TEAM MEMBERS:
+      - Replace initials in .member-avatar with the person's initials
+      - OR replace the entire .member-avatar div with:
+        <img class="member-photo" src="path/to/photo.jpg" alt="Nome Cognome">
+      - Fill in name, role, and bio
+      - Duplicate the .team-member block for each person
+    -->
+
+    <div class="team-member">
+      <div class="member-avatar">AB</div>
+      <div class="member-header">
+        <span class="member-name">Nome Cognome</span>
+        <span class="member-role">Fondatore &amp; Direttore artistico</span>
+      </div>
+      <p class="member-bio">
+        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
+      </p>
+    </div>
+
+    <div class="team-member">
+      <div class="member-avatar">CD</div>
+      <div class="member-header">
+        <span class="member-name">Nome Cognome</span>
+        <span class="member-role">Maestro di coro</span>
+      </div>
+      <p class="member-bio">
+        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
+      </p>
+    </div>
+
+    <div class="team-member">
+      <div class="member-avatar">EF</div>
+      <div class="member-header">
+        <span class="member-name">Nome Cognome</span>
+        <span class="member-role">Produzione &amp; Logistica</span>
+      </div>
+      <p class="member-bio">
+        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
+      </p>
+    </div>
+
+    <div class="team-member">
+      <div class="member-avatar">GH</div>
+      <div class="member-header">
+        <span class="member-name">Nome Cognome</span>
+        <span class="member-role">Comunicazione</span>
+      </div>
+      <p class="member-bio">
+        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── SECTION: LA SCIENZA ── -->
+<section id="scienza">
+  <h2 class="section-title">Perché funziona</h2>
+
+  <p class="scienza-intro">
+    Non lo diciamo solo perché lo sentono i partecipanti — anche la ricerca lo dice. Cantare insieme con gli altri non è solo bello: è profondamente utile.
+  </p>
+
+  <div class="science-grid">
+
+    <div class="science-card">
+      <div class="science-icon">♡</div>
+      <div>
+        <div class="science-title">Il cuore sincronizza</div>
+        <p class="science-body">
+          Quando canti in gruppo, la frequenza cardiaca di chi canta tende ad allinearsi. Non è metafora — è fisiologia. Il ritmo condiviso crea coerenza biologica tra le persone presenti.
+        </p>
+        <span class="science-cite">Vickhoff et al., 2013 — Frontiers in Psychology</span>
+      </div>
+    </div>
+
+    <div class="science-card">
+      <div class="science-icon">◎</div>
+      <div>
+        <div class="science-title">Le endorfine salgono</div>
+        <p class="science-body">
+          Il canto attiva il sistema delle endorfine — gli stessi neurotrasmettitori che entrano in gioco durante l'esercizio fisico. Il gruppo amplifica l'effetto: cantare insieme rilascia più endorfine che cantare da soli.
+        </p>
+        <span class="science-cite">Dunbar et al., 2012 — Evolution and Human Behavior</span>
+      </div>
+    </div>
+
+    <div class="science-card">
+      <div class="science-icon">◈</div>
+      <div>
+        <div class="science-title">La soglia sociale si abbassa</div>
+        <p class="science-body">
+          Bastano 60 minuti di canto collettivo con estranei per generare un senso di connessione e appartenenza paragonabile a mesi di frequentazione. È uno dei modi più rapidi che conosciamo per creare legame sociale.
+        </p>
+        <span class="science-cite">Pearce et al., 2015 — Royal Society Open Science</span>
+      </div>
+    </div>
+
+    <div class="science-card">
+      <div class="science-icon">↑</div>
+      <div>
+        <div class="science-title">Il cortisolo scende</div>
+        <p class="science-body">
+          Cantare riduce i livelli di cortisolo — il principale marcatore biologico dello stress. L'effetto è misurabile già dopo una singola sessione, indipendentemente dall'esperienza musicale del partecipante.
+        </p>
+        <span class="science-cite">Keeler et al., 2015 — Frontiers in Psychology</span>
+      </div>
+    </div>
+
+    <div class="science-card">
+      <div class="science-icon">∿</div>
+      <div>
+        <div class="science-title">Il respiro si regola</div>
+        <p class="science-body">
+          Cantare impone un ritmo respiratorio più lento e profondo. In gruppo, tutti respirano insieme — e questo ha un effetto diretto sul sistema nervoso autonomo, portando a uno stato di calma attiva.
+        </p>
+        <span class="science-cite">Vickhoff et al., 2013 — Frontiers in Psychology</span>
+      </div>
+    </div>
+
+    <div class="science-card">
+      <div class="science-icon">∞</div>
+      <div>
+        <div class="science-title">La memoria a lungo termine si attiva</div>
+        <p class="science-body">
+          Il cervello elabora la musica in modo diverso dal linguaggio, coinvolgendo aree legate alla memoria emotiva e procedurale. Imparare una canzone insieme è un'esperienza che resta.
+        </p>
+        <span class="science-cite">Thaut, 2005 — Rhythm, Music and the Brain</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <h2 class="cta-headline">Adesso tocca a te.</h2>
+  <p class="cta-sub">Nessuna esperienza richiesta. Solo voglia di esserci.</p>
+  <a href="index.html#date" class="btn-primary">Vedi le prossime date →</a>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer-brand-name">HardKoro</div>
+      <p class="footer-brand-line">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
+    </div>
+
+    <div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="singbuilding.html">SingBuilding</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#date">Prossime date</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-social">
+        <a href="#">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="#">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+          </svg>
+          YouTube
+        </a>
+      </div>
+      <div class="footer-email">hello@hardkoro.com</div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © HardKoro — Tutti i diritti riservati.
+  </div>
+</footer>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+    });
+  });
+</script>
+</body>
+</html>
