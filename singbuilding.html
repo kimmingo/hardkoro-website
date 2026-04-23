@@ -131,20 +131,7 @@ nav {
   position: relative;
 }
 
-/* Large ghost text behind headline */
-#hero::before {
-  content: "SING";
-  position: absolute;
-  right: -0.05em;
-  bottom: -0.15em;
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: clamp(12rem, 28vw, 22rem);
-  line-height: 1;
-  color: rgba(255,255,255,0.03);
-  pointer-events: none;
-  user-select: none;
-}
+
 
 .hero-label {
   font-size: 0.7rem;
@@ -696,9 +683,9 @@ footer {
   <h1 class="hero-headline">
     Basta con i team event<br>
     che si dimenticano<br>
-    <em>già il giorno dopo.</em>
+    già il giorno dopo.
   </h1>
-  <p class="hero-sub">SingBuilding trasforma la tua organizzazione in un coro spontaneo e inarrestabile — in meno tempo di quanto pensi. Nessuna prova, nessuna esperienza richiesta.</p>
+  <p class="hero-sub" style="color: var(--white);">SingBuilding trasforma la tua organizzazione in un coro spontaneo e inarrestabile — in meno tempo di quanto pensi. Nessuna prova, nessuna esperienza richiesta.</p>
 </section>
 
 
@@ -706,7 +693,6 @@ footer {
 <section id="storia">
 
   <div>
-    <p class="storia-label">Le radici</p>
     <h2 class="storia-headline">
       Il canto collettivo è il più antico strumento di coesione che l'umanità conosca.
     </h2>
@@ -786,29 +772,20 @@ footer {
   <div class="numeri-grid">
 
     <div class="numero-item">
-      <div class="numero-value">
-        <!-- Replace with your real number -->
-        48
-      </div>
+      <div class="numero-value">55<sup>+</sup></div>
       <div class="numero-label">Eventi realizzati</div>
       <div class="numero-rule"></div>
     </div>
 
     <div class="numero-item">
-      <div class="numero-value">
-        <!-- Replace with your real number -->
-        3.200<sup>+</sup>
-      </div>
+      <div class="numero-value">20.000<sup>+</sup></div>
       <div class="numero-label">Persone fatte cantare</div>
       <div class="numero-rule"></div>
     </div>
 
     <div class="numero-item">
-      <div class="numero-value">
-        <!-- Replace with your real number -->
-        12
-      </div>
-      <div class="numero-label">Città in Italia</div>
+      <div class="numero-value">39</div>
+      <div class="numero-label">Brani</div>
       <div class="numero-rule"></div>
     </div>
 
@@ -820,12 +797,11 @@ footer {
 <section id="testimonial">
   <span class="testimonial-mark">"</span>
   <p class="testimonial-quote">
-    Non mi aspettavo di emozionarmi. Eravamo in 200 in sala, non ci conoscevamo quasi, e dopo venti minuti stavamo cantando tutti insieme come se lo facessimo da sempre. È stato il momento più vero di tutto il nostro convegno annuale.
+    Ero scettico. Due ore dopo ero completamente convertito. Tutto il team stava sorridendo. È stato il momento più umano che avevamo condiviso in anni.
   </p>
   <div class="testimonial-source">
-    <!-- Replace with real name, role, company -->
-    Nome Cognome
-    <span class="testimonial-name">Ruolo — Nome Azienda</span>
+    Partecipante, evento SingBuilding
+    <span class="testimonial-name">Milano</span>
   </div>
 </section>
 
