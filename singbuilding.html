@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SingBuilding — HardKoro per le aziende</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:   #0e0e0e;
-  --white:   #f5f2ec;
-  --warm:    #e8e3d9;
+  --black:   #262626;
+  --white:   #ffffff;
+  
   --blue:    #0000ff;
   --blue-dk: #0000cc;
-  --mid:     #6b6560;
-  --serif:   'Playfair Display', Georgia, serif;
+  --mid:     #6b6b6b;
+  
   --sans:    'DM Sans', sans-serif;
 }
 
@@ -40,7 +40,7 @@ nav {
   justify-content: space-between;
   padding: 0 1.5rem;
   height: 60px;
-  background: rgba(14,14,14,0.92);
+  background: rgba(38,38,38,0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -67,7 +67,7 @@ nav {
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.7);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -80,7 +80,7 @@ nav {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--white);
-  border: 1px solid rgba(245,242,236,0.45);
+  border: 1px solid rgba(255,255,255,0.45);
   padding: 0.4rem 1rem;
   border-radius: 2px;
   text-decoration: none;
@@ -104,7 +104,7 @@ nav {
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 .nav-mobile-menu {
   position: fixed; top: 60px; left: 0; right: 0; z-index: 190;
-  background: #0e0e0e; display: flex; flex-direction: column;
+  background: #262626; display: flex; flex-direction: column;
   padding: 0 1.5rem 1.5rem; gap: 0; max-height: 0; overflow: hidden;
   opacity: 0; transition: max-height 0.38s cubic-bezier(.4,0,.2,1), opacity 0.25s, padding 0.3s;
   pointer-events: none;
@@ -112,12 +112,12 @@ nav {
 .nav-mobile-menu.open { max-height: 400px; opacity: 1; padding: 0.5rem 1.5rem 2rem; pointer-events: auto; }
 .nav-mobile-menu a {
   font-size: 1rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
-  color: rgba(245,242,236,0.8); text-decoration: none; padding: 0.95rem 0;
+  color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.95rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s;
 }
 .nav-mobile-menu a:last-child { border-bottom: none; }
 .nav-mobile-menu a.nav-cta {
-  display: block; border: 1px solid rgba(245,242,236,0.4);
+  display: block; border: 1px solid rgba(255,255,255,0.4);
   text-align: center; margin-top: 1rem; padding: 0.7rem 1rem; color: var(--white);
 }
 
@@ -137,7 +137,7 @@ nav {
   position: absolute;
   right: -0.05em;
   bottom: -0.15em;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 700;
   font-size: clamp(12rem, 28vw, 22rem);
   line-height: 1;
@@ -156,7 +156,7 @@ nav {
 }
 
 .hero-headline {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(2rem, 6vw, 4.25rem);
   font-weight: 700;
   line-height: 1.1;
@@ -166,14 +166,14 @@ nav {
 }
 
 .hero-headline em {
-  font-style: italic;
+  
   font-weight: 400;
-  color: rgba(245,242,236,0.65);
+  color: rgba(255,255,255,0.65);
 }
 
 .hero-sub {
   font-size: clamp(0.95rem, 2vw, 1.1rem);
-  color: rgba(245,242,236,0.55);
+  color: rgba(255,255,255,0.55);
   max-width: 520px;
   line-height: 1.7;
 }
@@ -199,7 +199,7 @@ nav {
 }
 
 .storia-headline {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.25;
@@ -220,8 +220,8 @@ nav {
 }
 
 .storia-quote blockquote {
-  font-family: var(--serif);
-  font-style: italic;
+  font-family: var(--sans);
+  
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--black);
@@ -231,7 +231,7 @@ nav {
   display: block;
   margin-top: 0.75rem;
   font-size: 0.72rem;
-  font-style: normal;
+  
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--mid);
@@ -242,7 +242,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  background: rgba(14,14,14,0.08);
+  background: rgba(38,38,38,0.08);
 }
 
 .storia-card {
@@ -262,7 +262,7 @@ nav {
 }
 
 .storia-card-title {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.35rem;
@@ -283,7 +283,7 @@ nav {
 }
 
 #benefits .section-title {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 700;
   line-height: 1.25;
@@ -299,16 +299,16 @@ nav {
 
 .benefit-card {
   padding: 2.25rem 0;
-  border-top: 1px solid rgba(245,242,236,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   display: grid;
   grid-template-columns: 3rem 1fr;
   gap: 1.5rem;
   align-items: start;
 }
-.benefit-card:last-child { border-bottom: 1px solid rgba(245,242,236,0.1); }
+.benefit-card:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
 
 .benefit-num {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1rem;
   font-weight: 700;
   color: var(--blue);
@@ -316,7 +316,7 @@ nav {
 }
 
 .benefit-title {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--white);
@@ -325,7 +325,7 @@ nav {
 
 .benefit-body {
   font-size: 0.9rem;
-  color: rgba(245,242,236,0.5);
+  color: rgba(255,255,255,0.5);
   line-height: 1.7;
 }
 
@@ -333,7 +333,7 @@ nav {
 /* ── SECTION: NUMERI ── */
 #numeri {
   padding: 5rem 1.5rem;
-  background: var(--warm);
+  background: var(--white);
 }
 
 .numeri-grid {
@@ -346,7 +346,7 @@ nav {
 .numero-item {}
 
 .numero-value {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(3.5rem, 10vw, 6rem);
   font-weight: 700;
   line-height: 1;
@@ -386,9 +386,9 @@ nav {
 }
 
 .testimonial-quote {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.25rem, 4vw, 2rem);
-  font-style: italic;
+  
   font-weight: 400;
   line-height: 1.55;
   color: var(--white);
@@ -398,7 +398,7 @@ nav {
 
 .testimonial-mark {
   display: block;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 4rem;
   font-weight: 700;
   color: var(--blue);
@@ -411,14 +411,14 @@ nav {
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.35);
+  color: rgba(255,255,255,0.35);
 }
 
 .testimonial-name {
   display: block;
   margin-top: 0.3rem;
   font-size: 0.82rem;
-  color: rgba(245,242,236,0.6);
+  color: rgba(255,255,255,0.6);
   letter-spacing: 0.05em;
 }
 
@@ -451,7 +451,7 @@ nav {
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--black);
-  border: 1px solid rgba(14,14,14,0.2);
+  border: 1px solid rgba(38,38,38,0.2);
   padding: 0.55rem 1.1rem;
   border-radius: 100px;
   transition: background 0.2s, border-color 0.2s;
@@ -480,7 +480,7 @@ nav {
 }
 
 .contact-headline {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.75rem, 5vw, 3.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -491,7 +491,7 @@ nav {
 
 .contact-sub {
   font-size: 0.95rem;
-  color: rgba(245,242,236,0.45);
+  color: rgba(255,255,255,0.45);
   max-width: 440px;
   line-height: 1.7;
   margin-bottom: 3rem;
@@ -517,14 +517,14 @@ nav {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.4);
+  color: rgba(255,255,255,0.4);
 }
 
 .form-input,
 .form-textarea,
 .form-select {
-  background: rgba(245,242,236,0.05);
-  border: 1px solid rgba(245,242,236,0.12);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 2px;
   padding: 0.75rem 1rem;
   font-family: var(--sans);
@@ -539,7 +539,7 @@ nav {
 .form-textarea:focus,
 .form-select:focus { border-color: var(--blue); }
 .form-input::placeholder,
-.form-textarea::placeholder { color: rgba(245,242,236,0.2); }
+.form-textarea::placeholder { color: rgba(255,255,255,0.2); }
 .form-select option { background: var(--black); color: var(--white); }
 .form-textarea { resize: vertical; min-height: 120px; }
 
@@ -563,7 +563,7 @@ nav {
 
 .form-privacy {
   font-size: 0.72rem;
-  color: rgba(245,242,236,0.2);
+  color: rgba(255,255,255,0.2);
   line-height: 1.6;
   max-width: 400px;
 }
@@ -573,7 +573,7 @@ nav {
 footer {
   background: var(--black);
   color: var(--white);
-  border-top: 1px solid rgba(245,242,236,0.06);
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 4rem 1.5rem 2.5rem;
 }
 .footer-grid {
@@ -583,7 +583,7 @@ footer {
   margin-bottom: 3rem;
 }
 .footer-brand-name {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--white);
@@ -591,25 +591,25 @@ footer {
 }
 .footer-brand-line {
   font-size: 0.82rem;
-  color: rgba(245,242,236,0.45);
+  color: rgba(255,255,255,0.45);
   line-height: 1.6;
 }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
 .footer-links a {
-  font-size: 0.82rem; color: rgba(245,242,236,0.6);
+  font-size: 0.82rem; color: rgba(255,255,255,0.6);
   text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--white); }
 .footer-social { display: flex; flex-direction: column; gap: 0.75rem; }
 .footer-social a {
   display: flex; align-items: center; gap: 0.6rem;
-  font-size: 0.82rem; color: rgba(245,242,236,0.6);
+  font-size: 0.82rem; color: rgba(255,255,255,0.6);
   text-decoration: none; transition: color 0.2s;
 }
 .footer-social a:hover { color: var(--white); }
 .social-icon { width: 16px; height: 16px; flex-shrink: 0; }
-.footer-email { font-size: 0.82rem; color: rgba(245,242,236,0.45); margin-top: 1.25rem; }
-.footer-bottom { padding-top: 1.5rem; font-size: 0.7rem; color: rgba(245,242,236,0.25); letter-spacing: 0.05em; }
+.footer-email { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-top: 1.25rem; }
+.footer-bottom { padding-top: 1.5rem; font-size: 0.7rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
 
 
 /* ── RESPONSIVE ── */
@@ -629,7 +629,7 @@ footer {
   .benefits-grid { grid-template-columns: 1fr; }
 
   .numeri-grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
-  .numero-item { border-right: 1px solid rgba(14,14,14,0.12); padding: 0 2.5rem; }
+  .numero-item { border-right: 1px solid rgba(38,38,38,0.12); padding: 0 2.5rem; }
   .numero-item:first-child { padding-left: 0; }
   .numero-item:last-child { border-right: none; }
 
@@ -647,13 +647,16 @@ footer {
   .benefits-grid { grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
   .benefit-card {
     grid-template-columns: 1fr;
-    border-top: 1px solid rgba(245,242,236,0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding: 2.25rem 0;
   }
   .benefit-card:last-child { border-bottom: none; }
   .benefit-num { margin-bottom: 0.5rem; }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -662,8 +665,8 @@ footer {
   <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
     <svg class="nav-logo-svg" viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
       <rect width="340" height="34" fill="none"/>
-      <text x="0" y="26" font-family="'Playfair Display', Georgia, serif" font-weight="700"
-        font-size="24" fill="#f5f2ec" letter-spacing="5">HARDKORO</text>
+      <text x="0" y="26" font-family="'DM Sans', sans-serif" font-weight="700"
+        font-size="24" fill="#ffffff" letter-spacing="5">HARDKORO</text>
     </svg>
   </a>
   <div class="nav-right">

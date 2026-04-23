@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — HardKoro</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:   #0e0e0e;
-  --white:   #f5f2ec;
-  --warm:    #e8e3d9;
+  --black:   #262626;
+  --white:   #ffffff;
+  
   --blue:    #0000ff;
   --blue-dk: #0000cc;
-  --mid:     #6b6560;
-  --serif:   'Playfair Display', Georgia, serif;
+  --mid:     #6b6b6b;
+  
   --sans:    'DM Sans', sans-serif;
 }
 
@@ -40,7 +40,7 @@ nav {
   justify-content: space-between;
   padding: 0 1.5rem;
   height: 60px;
-  background: rgba(14,14,14,0.92);
+  background: rgba(38,38,38,0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -74,7 +74,7 @@ nav {
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.7);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -88,7 +88,7 @@ nav {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--white);
-  border: 1px solid rgba(245,242,236,0.45);
+  border: 1px solid rgba(255,255,255,0.45);
   padding: 0.4rem 1rem;
   border-radius: 2px;
   text-decoration: none;
@@ -123,7 +123,7 @@ nav {
   position: fixed;
   top: 60px; left: 0; right: 0;
   z-index: 190;
-  background: #0e0e0e;
+  background: #262626;
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem 1.5rem;
@@ -145,7 +145,7 @@ nav {
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.8);
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
   padding: 0.95rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -154,7 +154,7 @@ nav {
 .nav-mobile-menu a:last-child { border-bottom: none; }
 .nav-mobile-menu a.nav-cta {
   display: block;
-  border: 1px solid rgba(245,242,236,0.4);
+  border: 1px solid rgba(255,255,255,0.4);
   text-align: center;
   margin-top: 1rem;
   padding: 0.7rem 1rem;
@@ -174,12 +174,12 @@ nav {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.35);
+  color: rgba(255,255,255,0.35);
   margin-bottom: 1.5rem;
 }
 
 .page-header-headline {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(2rem, 7vw, 4rem);
   font-weight: 700;
   line-height: 1.15;
@@ -188,9 +188,9 @@ nav {
 }
 
 .page-header-headline em {
-  font-style: italic;
+  
   font-weight: 400;
-  color: rgba(245,242,236,0.7);
+  color: rgba(255,255,255,0.7);
 }
 
 
@@ -201,9 +201,9 @@ nav {
 }
 
 .mission-body {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.15rem, 3.5vw, 1.5rem);
-  font-style: italic;
+  
   line-height: 1.75;
   color: var(--black);
   max-width: 700px;
@@ -221,83 +221,7 @@ nav {
 }
 
 
-/* ── SECTION: IL TEAM ── */
-#team {
-  padding: 5rem 1.5rem;
-  background: var(--warm);
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 3rem;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-
-.team-member {
-  padding: 2rem 0;
-  border-top: 1px solid rgba(14,14,14,0.1);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-}
-.team-member:last-child {
-  border-bottom: 1px solid rgba(14,14,14,0.1);
-}
-
-.member-header {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.member-name {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.member-role {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue);
-}
-
-.member-bio {
-  font-size: 0.9rem;
-  color: var(--mid);
-  line-height: 1.65;
-  max-width: 560px;
-}
-
 /* Avatar initials circle */
-.member-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(14,14,14,0.07);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--black);
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-  margin-bottom: 0.5rem;
-}
-
 /* When you have a photo, swap .member-avatar with <img class="member-photo"> */
 .member-photo {
   width: 48px;
@@ -315,14 +239,12 @@ nav {
   color: var(--white);
 }
 
-#scienza .section-title { color: var(--white); }
-
-.scienza-intro {
-  font-family: var(--serif);
+#scienza .scienza-intro {
+  font-family: var(--sans);
   font-size: clamp(1.05rem, 3vw, 1.3rem);
-  font-style: italic;
+  
   line-height: 1.75;
-  color: rgba(245,242,236,0.8);
+  color: rgba(255,255,255,0.8);
   max-width: 620px;
   margin-bottom: 4rem;
 }
@@ -335,14 +257,14 @@ nav {
 
 .science-card {
   padding: 2rem 0;
-  border-top: 1px solid rgba(245,242,236,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   display: grid;
   grid-template-columns: 3rem 1fr;
   gap: 1.5rem;
   align-items: start;
 }
 .science-card:last-child {
-  border-bottom: 1px solid rgba(245,242,236,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .science-icon {
@@ -353,7 +275,7 @@ nav {
 }
 
 .science-title {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--white);
@@ -362,7 +284,7 @@ nav {
 
 .science-body {
   font-size: 0.9rem;
-  color: rgba(245,242,236,0.55);
+  color: rgba(255,255,255,0.55);
   line-height: 1.65;
 }
 
@@ -372,7 +294,7 @@ nav {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245,242,236,0.25);
+  color: rgba(255,255,255,0.25);
 }
 
 
@@ -384,7 +306,7 @@ nav {
 }
 
 .cta-headline {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.6rem, 5vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
@@ -431,7 +353,7 @@ footer {
 }
 
 .footer-brand-name {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--white);
@@ -439,7 +361,7 @@ footer {
 }
 .footer-brand-line {
   font-size: 0.82rem;
-  color: rgba(245,242,236,0.45);
+  color: rgba(255,255,255,0.45);
   line-height: 1.6;
 }
 
@@ -451,7 +373,7 @@ footer {
 }
 .footer-links a {
   font-size: 0.82rem;
-  color: rgba(245,242,236,0.6);
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
   letter-spacing: 0.04em;
   transition: color 0.2s;
@@ -468,7 +390,7 @@ footer {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.82rem;
-  color: rgba(245,242,236,0.6);
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -477,14 +399,14 @@ footer {
 
 .footer-email {
   font-size: 0.82rem;
-  color: rgba(245,242,236,0.45);
+  color: rgba(255,255,255,0.45);
   margin-top: 1.25rem;
 }
 
 .footer-bottom {
   padding-top: 1.5rem;
   font-size: 0.7rem;
-  color: rgba(245,242,236,0.25);
+  color: rgba(255,255,255,0.25);
   letter-spacing: 0.05em;
 }
 
@@ -500,17 +422,9 @@ footer {
   #mission, #team, #scienza, #cta { padding-left: 2.5rem; padding-right: 2.5rem; }
   footer { padding-left: 2.5rem; padding-right: 2.5rem; }
 
-  .team-grid { grid-template-columns: 1fr 1fr; gap: 0 3rem; }
-  .team-member {
-    border-top: 1px solid rgba(14,14,14,0.1);
-    border-bottom: none;
-  }
-  /* bottom border on last two members */
-  .team-member:nth-last-child(-n+2) { border-bottom: 1px solid rgba(14,14,14,0.1); }
-
-  .science-grid { grid-template-columns: 1fr 1fr; gap: 0 3rem; }
-  .science-card { border-top: 1px solid rgba(245,242,236,0.1); }
-  .science-card:nth-last-child(-n+2) { border-bottom: 1px solid rgba(245,242,236,0.1); }
+    .science-grid { grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+  .science-card { border-top: 1px solid rgba(255,255,255,0.1); }
+  .science-card:nth-last-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.1); }
 
   .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
@@ -523,6 +437,9 @@ footer {
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -531,8 +448,8 @@ footer {
   <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
     <svg class="nav-logo-svg" viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
       <rect width="340" height="34" fill="none"/>
-      <text x="0" y="26" font-family="'Playfair Display', Georgia, serif" font-weight="700"
-        font-size="24" fill="#f5f2ec" letter-spacing="5">HARDKORO</text>
+      <text x="0" y="26" font-family="'DM Sans', sans-serif" font-weight="700"
+        font-size="24" fill="#ffffff" letter-spacing="5">HARDKORO</text>
     </svg>
   </a>
 
@@ -560,17 +477,14 @@ footer {
 
 <!-- ── PAGE HEADER ── -->
 <section id="page-header">
-  <p class="page-label">Chi siamo</p>
   <h1 class="page-header-headline">
-    Crediamo che cantare insieme<br>
-    <em>cambi qualcosa — dentro e intorno a te.</em>
+    Crediamo che cantare insieme cambi qualcosa — dentro e intorno a te.
   </h1>
 </section>
 
 
 <!-- ── SECTION: MISSION ── -->
 <section id="mission">
-  <div class="mission-rule"></div>
   <p class="mission-body">
     HardKoro nasce da un'idea semplice: il canto collettivo non dovrebbe essere un privilegio di chi ha studiato musica. È per tutti — per chi canta stonato sotto la doccia, per chi non ha mai aperto uno spartito, per chi ha voglia di condividere qualcosa di vero con degli sconosciuti.
   </p>
@@ -579,68 +493,6 @@ footer {
   </p>
 </section>
 
-
-<!-- ── SECTION: IL TEAM ── -->
-<section id="team">
-  <h2 class="section-title">Il team</h2>
-
-  <div class="team-grid">
-
-    <!--
-      HOW TO POPULATE TEAM MEMBERS:
-      - Replace initials in .member-avatar with the person's initials
-      - OR replace the entire .member-avatar div with:
-        <img class="member-photo" src="path/to/photo.jpg" alt="Nome Cognome">
-      - Fill in name, role, and bio
-      - Duplicate the .team-member block for each person
-    -->
-
-    <div class="team-member">
-      <div class="member-avatar">AB</div>
-      <div class="member-header">
-        <span class="member-name">Nome Cognome</span>
-        <span class="member-role">Fondatore &amp; Direttore artistico</span>
-      </div>
-      <p class="member-bio">
-        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
-      </p>
-    </div>
-
-    <div class="team-member">
-      <div class="member-avatar">CD</div>
-      <div class="member-header">
-        <span class="member-name">Nome Cognome</span>
-        <span class="member-role">Maestro di coro</span>
-      </div>
-      <p class="member-bio">
-        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
-      </p>
-    </div>
-
-    <div class="team-member">
-      <div class="member-avatar">EF</div>
-      <div class="member-header">
-        <span class="member-name">Nome Cognome</span>
-        <span class="member-role">Produzione &amp; Logistica</span>
-      </div>
-      <p class="member-bio">
-        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
-      </p>
-    </div>
-
-    <div class="team-member">
-      <div class="member-avatar">GH</div>
-      <div class="member-header">
-        <span class="member-name">Nome Cognome</span>
-        <span class="member-role">Comunicazione</span>
-      </div>
-      <p class="member-bio">
-        Breve bio — cosa ti ha portato a HardKoro, la tua formazione musicale o umana, cosa ti appassiona di questo progetto. Due o tre frasi, personale e diretto.
-      </p>
-    </div>
-
-  </div>
-</section>
 
 
 <!-- ── SECTION: LA SCIENZA ── -->
@@ -687,7 +539,7 @@ footer {
     </div>
 
     <div class="science-card">
-      <div class="science-icon">↑</div>
+      <div class="science-icon">↓</div>
       <div>
         <div class="science-title">Il cortisolo scende</div>
         <p class="science-body">
