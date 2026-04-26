@@ -154,10 +154,8 @@ nav {
   border-top: 1px solid rgba(255,255,255,0.08);
   text-decoration: none;
   color: inherit;
-  transition: padding-left 0.25s;
 }
 .contact-option:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
-.contact-option:hover { padding-left: 0.5rem; }
 .contact-option.disabled {
   pointer-events: none;
   opacity: 0.4;
@@ -192,9 +190,7 @@ nav {
   font-size: 1.5rem;
   color: var(--blue);
   flex-shrink: 0;
-  transition: transform 0.2s;
 }
-.contact-option:hover .option-arrow { transform: translateX(4px); }
 .contact-option.disabled .option-arrow { color: rgba(255,255,255,0.2); }
 
 
@@ -233,6 +229,23 @@ footer {
 .footer-email { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-top: 1.25rem; }
 .footer-bottom { padding-top: 1.5rem; font-size: 0.7rem; color: rgba(255,255,255,0.25); letter-spacing: 0.05em; }
 
+
+/* ── OPTION BUTTON ── */
+.option-btn {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.55rem 1.25rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.contact-option:hover .option-btn { background: var(--blue-dk); }
 
 /* ── RESPONSIVE ── */
 @media (min-width: 640px) {
@@ -291,43 +304,33 @@ footer {
 <!-- ── PAGE ── -->
 <main id="page">
 
-  <p class="page-label">Contatti</p>
   <h1 class="page-headline">
-    Come possiamo<br>
-    <em>aiutarti?</em>
+    Fatti sentire
   </h1>
-  <p class="page-intro">Scegli il canale giusto e ti risponderemo nel più breve tempo possibile.</p>
-
   <div class="contact-options">
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
        target="_blank" rel="noopener noreferrer"
        class="contact-option">
       <div class="option-text">
-        <div class="option-label">Per aziende &amp; partner</div>
         <div class="option-title">Collaborazioni &amp; SingBuilding</div>
         <div class="option-sub">Vuoi portare HardKoro al tuo team o collaborare con noi?</div>
       </div>
-      <div class="option-arrow">→</div>
+      <span class="option-btn">Parliamoci →</span>
     </a>
 
-    <a href="PASTE_MEDIA_FORM_URL_HERE"
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
        target="_blank" rel="noopener noreferrer"
-       class="contact-option disabled"
-       aria-disabled="true">
+       class="contact-option">
       <div class="option-text">
-        <div class="option-label">Giornalisti &amp; stampa</div>
         <div class="option-title">Richieste media</div>
         <div class="option-sub">Press kit, interviste, materiali fotografici.</div>
       </div>
-      <div class="option-arrow">→</div>
+      <span class="option-btn">Contattaci →</span>
     </a>
 
   </div>
 
-  <p class="contact-email">
-    Per tutto il resto: <a href="mailto:hello@hardkoro.com">hello@hardkoro.com</a>
-  </p>
 
 </main>
 
@@ -349,7 +352,7 @@ footer {
     </div>
     <div>
       <div class="footer-social">
-        <a href="#">
+        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="2" y="2" width="20" height="20" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -357,14 +360,13 @@ footer {
           </svg>
           Instagram
         </a>
-        <a href="#">
+        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
           </svg>
           YouTube
         </a>
       </div>
-      <div class="footer-email">hello@hardkoro.com</div>
     </div>
   </div>
   <div class="footer-bottom">© HardKoro — Tutti i diritti riservati.</div>
