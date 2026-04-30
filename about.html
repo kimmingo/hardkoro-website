@@ -464,6 +464,7 @@ footer {
   .nav-hamburger { display: none; }
   .nav-links { display: flex; }
   .nav-cta { display: inline-block; }
+  .nav-right .lang-toggle { display: flex; }
 
   #page-header { padding: 12rem 2.5rem 5rem; }
   #mission, #team, #scienza, #cta { padding-left: 2.5rem; padding-right: 2.5rem; }
@@ -483,6 +484,53 @@ footer {
   footer { padding-left: 4rem; padding-right: 4rem; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
 }
+
+/* ── LANG TOGGLE ── */
+/* Nav-right instance hidden on mobile; only drawer instance shows */
+.nav-right .lang-toggle { display: none; }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.75rem;
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.lang-toggle button:hover { color: var(--white); }
+.lang-toggle button.active { color: var(--white); }
+.lang-sep {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  pointer-events: none;
+}
+/* Mobile drawer toggle — full width row */
+.nav-mobile-menu .lang-toggle {
+  margin-left: 0;
+  padding: 0.9rem 0;
+  border-bottom: none;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.nav-mobile-menu .lang-toggle button {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+.nav-mobile-menu .lang-toggle button.active { color: var(--white); }
+.nav-mobile-menu .lang-sep { font-size: 0.75rem; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -502,8 +550,8 @@ footer {
       <li><a href="singbuilding.html">SingBuilding</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="index.html#date" class="nav-cta">Prossime date</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+    <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -514,25 +562,23 @@ footer {
   <a href="about.html">About</a>
   <a href="singbuilding.html">SingBuilding</a>
   <a href="contact.html">Contact</a>
-  <a href="index.html#date" class="nav-cta">Prossime date</a>
+  <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
 </div>
 
 
 <!-- ── PAGE HEADER ── -->
 <section id="page-header">
-  <h1 class="page-header-headline">
-    Crediamo che cantare insieme cambi qualcosa — dentro e intorno a te.
-  </h1>
+  <h1 class="page-header-headline" data-i18n="about.hero">Crediamo che cantare insieme cambi qualcosa — dentro e intorno a te.</h1>
 </section>
 
 
 <!-- ── SECTION: MISSION ── -->
 <section id="mission">
   <p class="mission-body">
-    HardKoro nasce da un'idea semplice: il canto collettivo non dovrebbe essere un privilegio di chi ha studiato musica. È per tutti — per chi canta stonato sotto la doccia, per chi non ha mai aperto uno spartito, per chi ha voglia di condividere qualcosa di vero con degli sconosciuti.
+    <span data-i18n="about.mission1">HardKoro nasce da un'idea semplice: il canto collettivo non dovrebbe essere un privilegio di chi ha studiato musica. È per tutti — per chi canta stonato sotto la doccia, per chi non ha mai aperto uno spartito, per chi ha voglia di condividere qualcosa di vero con degli sconosciuti.</span>
   </p>
   <p class="mission-body" style="margin-top: 1.5em;">
-    Ogni appuntamento è un esperimento sociale. Una stanza, una guida, una canzone da imparare insieme. Non ci sono prove, non c'è pubblico, non c'è giudizio. C'è solo la voce — la tua, quella di tutti gli altri, e il momento in cui diventano una cosa sola.
+    <span data-i18n="about.mission2">Ogni appuntamento è un esperimento sociale. Una stanza, una guida, una canzone da imparare insieme. Non ci sono prove, non c'è pubblico, non c'è giudizio. C'è solo la voce — la tua, quella di tutti gli altri, e il momento in cui diventano una cosa sola.</span>
   </p>
 </section>
 
@@ -540,10 +586,10 @@ footer {
 
 <!-- ── SECTION: LA SCIENZA ── -->
 <section id="scienza">
-  <h2 class="section-title">Perché funziona</h2>
+  <h2 class="section-title" data-i18n="about.science.title">Perché funziona</h2>
 
   <p class="scienza-intro">
-    Non lo diciamo solo perché lo sentono i partecipanti — anche la ricerca lo dice. Cantare insieme con gli altri non è solo bello: è profondamente utile.
+    <span data-i18n="about.science.intro">Non lo diciamo solo perché lo sentono i partecipanti — anche la ricerca lo dice. Cantare insieme con gli altri non è solo bello: è profondamente utile.</span>
   </p>
 
   <div class="science-grid">
@@ -551,9 +597,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">♡</div>
       <div>
-        <div class="science-title">Il cuore sincronizza</div>
+        <div class="science-title" data-i18n="about.card1.title">Il cuore sincronizza</div>
         <p class="science-body">
-          Quando canti in gruppo, la frequenza cardiaca di chi canta tende ad allinearsi. Non è metafora — è fisiologia. Il ritmo condiviso crea coerenza biologica tra le persone presenti.
+          <span data-i18n="about.card1.body">Quando canti in gruppo, la frequenza cardiaca di chi canta tende ad allinearsi. Non è metafora — è fisiologia. Il ritmo condiviso crea coerenza biologica tra le persone presenti.</span>
         </p>
         <span class="science-cite">Vickhoff et al., 2013 — Frontiers in Psychology</span>
       </div>
@@ -562,9 +608,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">◎</div>
       <div>
-        <div class="science-title">Le endorfine salgono</div>
+        <div class="science-title" data-i18n="about.card2.title">Le endorfine salgono</div>
         <p class="science-body">
-          Il canto attiva il sistema delle endorfine — gli stessi neurotrasmettitori che entrano in gioco durante l'esercizio fisico. Il gruppo amplifica l'effetto: cantare insieme rilascia più endorfine che cantare da soli.
+          <span data-i18n="about.card2.body">Il canto attiva il sistema delle endorfine — gli stessi neurotrasmettitori che entrano in gioco durante l'esercizio fisico. Il gruppo amplifica l'effetto: cantare insieme rilascia più endorfine che cantare da soli.</span>
         </p>
         <span class="science-cite">Dunbar et al., 2012 — Evolution and Human Behavior</span>
       </div>
@@ -573,9 +619,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">◈</div>
       <div>
-        <div class="science-title">La soglia sociale si abbassa</div>
+        <div class="science-title" data-i18n="about.card3.title">La soglia sociale si abbassa</div>
         <p class="science-body">
-          Bastano 60 minuti di canto collettivo con estranei per generare un senso di connessione e appartenenza paragonabile a mesi di frequentazione. È uno dei modi più rapidi che conosciamo per creare legame sociale.
+          <span data-i18n="about.card3.body">Bastano 60 minuti di canto collettivo con estranei per generare un senso di connessione e appartenenza paragonabile a mesi di frequentazione. È uno dei modi più rapidi che conosciamo per creare legame sociale.</span>
         </p>
         <span class="science-cite">Pearce et al., 2015 — Royal Society Open Science</span>
       </div>
@@ -584,9 +630,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">↓</div>
       <div>
-        <div class="science-title">Il cortisolo scende</div>
+        <div class="science-title" data-i18n="about.card4.title">Il cortisolo scende</div>
         <p class="science-body">
-          Cantare riduce i livelli di cortisolo — il principale marcatore biologico dello stress. L'effetto è misurabile già dopo una singola sessione, indipendentemente dall'esperienza musicale del partecipante.
+          <span data-i18n="about.card4.body">Cantare riduce i livelli di cortisolo — il principale marcatore biologico dello stress. L'effetto è misurabile già dopo una singola sessione, indipendentemente dall'esperienza musicale del partecipante.</span>
         </p>
         <span class="science-cite">Keeler et al., 2015 — Frontiers in Psychology</span>
       </div>
@@ -595,9 +641,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">∿</div>
       <div>
-        <div class="science-title">Il respiro si regola</div>
+        <div class="science-title" data-i18n="about.card5.title">Il respiro si regola</div>
         <p class="science-body">
-          Cantare impone un ritmo respiratorio più lento e profondo. In gruppo, tutti respirano insieme — e questo ha un effetto diretto sul sistema nervoso autonomo, portando a uno stato di calma attiva.
+          <span data-i18n="about.card5.body">Cantare impone un ritmo respiratorio più lento e profondo. In gruppo, tutti respirano insieme — e questo ha un effetto diretto sul sistema nervoso autonomo, portando a uno stato di calma attiva.</span>
         </p>
         <span class="science-cite">Vickhoff et al., 2013 — Frontiers in Psychology</span>
       </div>
@@ -606,9 +652,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">∞</div>
       <div>
-        <div class="science-title">La memoria a lungo termine si attiva</div>
+        <div class="science-title" data-i18n="about.card6.title">La memoria a lungo termine si attiva</div>
         <p class="science-body">
-          Il cervello elabora la musica in modo diverso dal linguaggio, coinvolgendo aree legate alla memoria emotiva e procedurale. Imparare una canzone insieme è un'esperienza che resta.
+          <span data-i18n="about.card6.body">Il cervello elabora la musica in modo diverso dal linguaggio, coinvolgendo aree legate alla memoria emotiva e procedurale. Imparare una canzone insieme è un'esperienza che resta.</span>
         </p>
         <span class="science-cite">Thaut, 2005 — Rhythm, Music and the Brain</span>
       </div>
@@ -620,9 +666,9 @@ footer {
 
 <!-- ── CTA ── -->
 <section id="cta">
-  <h2 class="cta-headline">Adesso tocca a te.</h2>
-  <p class="cta-sub">Nessuna esperienza richiesta. Solo voglia di esserci.</p>
-  <a href="index.html#date" class="btn-primary">Vedi le prossime date →</a>
+  <h2 class="cta-headline" data-i18n="about.cta.headline">Adesso tocca a te.</h2>
+  <p class="cta-sub" data-i18n="about.cta.sub">Nessuna esperienza richiesta. Solo voglia di esserci.</p>
+  <a href="index.html#date" class="btn-primary" data-i18n="about.cta.btn">Vedi le prossime date →</a>
 </section>
 
 
@@ -632,7 +678,7 @@ footer {
 
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
     </div>
 
     <div>
@@ -640,7 +686,7 @@ footer {
         <li><a href="about.html">About</a></li>
         <li><a href="singbuilding.html">SingBuilding</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#date">Prossime date</a></li>
+        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
       </ul>
     </div>
 
@@ -666,7 +712,7 @@ footer {
   </div>
 
   <div class="footer-bottom">
-    © HardKoro — Tutti i diritti riservati.
+    <span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span>
   </div>
 </footer>
 
@@ -691,5 +737,6 @@ footer {
     });
   });
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

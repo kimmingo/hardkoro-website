@@ -300,6 +300,7 @@ footer {
   .nav-hamburger { display: none; }
   .nav-links { display: flex; }
   .nav-cta { display: inline-block; }
+  .nav-right .lang-toggle { display: flex; }
   #page { padding-left: 2.5rem; padding-right: 2.5rem; }
   footer { padding-left: 2.5rem; padding-right: 2.5rem; }
   .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -311,6 +312,53 @@ footer {
   footer { padding-left: 4rem; padding-right: 4rem; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
 }
+
+/* ── LANG TOGGLE ── */
+/* Nav-right instance hidden on mobile; only drawer instance shows */
+.nav-right .lang-toggle { display: none; }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.75rem;
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.lang-toggle button:hover { color: var(--white); }
+.lang-toggle button.active { color: var(--white); }
+.lang-sep {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  pointer-events: none;
+}
+/* Mobile drawer toggle — full width row */
+.nav-mobile-menu .lang-toggle {
+  margin-left: 0;
+  padding: 0.9rem 0;
+  border-bottom: none;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.nav-mobile-menu .lang-toggle button {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+.nav-mobile-menu .lang-toggle button.active { color: var(--white); }
+.nav-mobile-menu .lang-sep { font-size: 0.75rem; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -329,8 +377,8 @@ footer {
       <li><a href="singbuilding.html">SingBuilding</a></li>
       <li><a href="contact.html" aria-current="page">Contact</a></li>
     </ul>
-    <a href="index.html#date" class="nav-cta">Prossime date</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+    <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -340,36 +388,34 @@ footer {
   <a href="about.html">About</a>
   <a href="singbuilding.html">SingBuilding</a>
   <a href="contact.html">Contact</a>
-  <a href="index.html#date" class="nav-cta">Prossime date</a>
+  <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
 </div>
 
 
 <!-- ── PAGE ── -->
 <main id="page">
 
-  <h1 class="page-headline">
-    Fatti sentire
-  </h1>
+  <h1 class="page-headline" data-i18n="contact.headline">Fatti sentire</h1>
   <div class="contact-options">
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
        target="_blank" rel="noopener noreferrer"
        class="contact-option">
       <div class="option-text">
-        <div class="option-title">Collaborazioni &amp; SingBuilding</div>
-        <div class="option-sub">Vuoi portare HardKoro al tuo team o collaborare con noi?</div>
+        <div class="option-title" data-i18n-html="contact.opt1.title">Collaborazioni &amp; SingBuilding</div>
+        <div class="option-sub" data-i18n="contact.opt1.sub">Vuoi portare HardKoro al tuo team o collaborare con noi?</div>
       </div>
-      <span class="option-btn">Parliamoci →</span>
+      <span class="option-btn" data-i18n="contact.opt1.btn">Parliamoci →</span>
     </a>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
        target="_blank" rel="noopener noreferrer"
        class="contact-option">
       <div class="option-text">
-        <div class="option-title">Richieste media</div>
-        <div class="option-sub">Press kit, interviste, materiali fotografici.</div>
+        <div class="option-title" data-i18n="contact.opt2.title">Richieste media</div>
+        <div class="option-sub" data-i18n="contact.opt2.sub">Press kit, interviste, materiali fotografici.</div>
       </div>
-      <span class="option-btn">Contattaci →</span>
+      <span class="option-btn" data-i18n="contact.opt2.btn">Contattaci →</span>
     </a>
 
   </div>
@@ -383,14 +429,14 @@ footer {
   <div class="footer-grid">
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
     </div>
     <div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
         <li><a href="singbuilding.html">SingBuilding</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#date">Prossime date</a></li>
+        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
       </ul>
     </div>
     <div>
@@ -412,7 +458,7 @@ footer {
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© HardKoro — Tutti i diritti riservati.</div>
+  <div class="footer-bottom"><span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span></div>
 </footer>
 
 
@@ -434,5 +480,6 @@ footer {
     });
   });
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

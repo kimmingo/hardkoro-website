@@ -660,6 +660,7 @@ footer {
   .nav-hamburger { display: none; }
   .nav-links { display: flex; }
   .nav-cta { display: inline-block; }
+  .nav-right .lang-toggle { display: flex; }
 
   #hero { padding: 12rem 2.5rem 6rem; }
   #storia, #benefits, #numeri, #testimonial, #contesti, #contact { padding-left: 2.5rem; padding-right: 2.5rem; }
@@ -695,6 +696,53 @@ footer {
   .benefit-card:last-child { border-bottom: none; }
   .benefit-num { margin-bottom: 0.5rem; }
 }
+
+/* ── LANG TOGGLE ── */
+/* Nav-right instance hidden on mobile; only drawer instance shows */
+.nav-right .lang-toggle { display: none; }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.75rem;
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.lang-toggle button:hover { color: var(--white); }
+.lang-toggle button.active { color: var(--white); }
+.lang-sep {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  pointer-events: none;
+}
+/* Mobile drawer toggle — full width row */
+.nav-mobile-menu .lang-toggle {
+  margin-left: 0;
+  padding: 0.9rem 0;
+  border-bottom: none;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.nav-mobile-menu .lang-toggle button {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+.nav-mobile-menu .lang-toggle button.active { color: var(--white); }
+.nav-mobile-menu .lang-sep { font-size: 0.75rem; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -713,8 +761,8 @@ footer {
       <li><a href="singbuilding.html" aria-current="page">SingBuilding</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="index.html#date" class="nav-cta">Prossime date</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+    <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -724,16 +772,16 @@ footer {
   <a href="about.html">About</a>
   <a href="singbuilding.html">SingBuilding</a>
   <a href="contact.html">Contact</a>
-  <a href="index.html#date" class="nav-cta">Prossime date</a>
+  <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
 </div>
 
 
 <!-- ── HERO: PROVOCATION ── -->
 <section id="hero">
   <h1 class="hero-headline">
-    SingBuilding trasforma la tua organizzazione in un coro spontaneo e inarrestabile.
+    <span data-i18n="sb.hero.headline">SingBuilding trasforma la tua organizzazione in un coro spontaneo e inarrestabile.</span>
   </h1>
-  <p class="hero-sub">Nessuna prova, nessuna esperienza richiesta.</p>
+  <p class="hero-sub" data-i18n="sb.hero.sub">Nessuna prova, nessuna esperienza richiesta.</p>
 </section>
 
 
@@ -742,14 +790,14 @@ footer {
 
   <div>
     <h2 class="storia-headline">
-      Il canto collettivo è il più antico strumento di coesione che l'umanità conosca.
+      <span data-i18n="sb.storia.headline">Il canto collettivo è il più antico strumento di coesione che l'umanità conosca.</span>
     </h2>
     <p class="storia-body">
-      Da milioni di anni, gli esseri umani usano il canto per sincronizzarsi, creare fiducia e abbattere le gerarchie. Prima dei meeting, prima delle slide, prima del team building con la corda — c'era la voce. La scienza moderna non ha fatto altro che confermare ciò che i nostri antenati sapevano istintivamente.
+      <span data-i18n="sb.storia.body">Da milioni di anni, gli esseri umani usano il canto per sincronizzarsi, creare fiducia e abbattere le gerarchie. Prima dei meeting, prima delle slide, prima del team building con la corda — c'era la voce. La scienza moderna non ha fatto altro che confermare ciò che i nostri antenati sapevano istintivamente.</span>
     </p>
     <div class="storia-quote">
       <blockquote>
-        "Un mega-meccanismo per creare legami: perché cantare insieme ci fa bene."
+        <span data-i18n="sb.storia.quote">"Un mega-meccanismo per creare legami: perché cantare insieme ci fa bene."</span>
       </blockquote>
       <cite>— The Guardian</cite>
     </div>
@@ -759,22 +807,22 @@ footer {
     <div class="storia-card">
       <div class="storia-card-arrow">↑</div>
       <div>
-        <div class="storia-card-title">Endorfine</div>
-        <p class="storia-card-body">rilasciate durante il canto collettivo, riducendo lo stress e migliorando l'umore già dopo 60 minuti</p>
+        <div class="storia-card-title" data-i18n="sb.card.end.title">Endorfine</div>
+        <p class="storia-card-body" data-i18n="sb.card.end.body">rilasciate durante il canto collettivo, riducendo lo stress e migliorando l'umore già dopo 60 minuti</p>
       </div>
     </div>
     <div class="storia-card">
       <div class="storia-card-arrow">↑</div>
       <div>
-        <div class="storia-card-title">Ossitocina</div>
-        <p class="storia-card-body">l'ormone del legame, prodotto quando le voci si armonizzano insieme — identico a quello che crea fiducia tra colleghi</p>
+        <div class="storia-card-title" data-i18n="sb.card.oss.title">Ossitocina</div>
+        <p class="storia-card-body" data-i18n="sb.card.oss.body">l'ormone del legame, prodotto quando le voci si armonizzano insieme — identico a quello che crea fiducia tra colleghi</p>
       </div>
     </div>
     <div class="storia-card">
       <div class="storia-card-arrow">↓</div>
       <div>
-        <div class="storia-card-title">Barriere</div>
-        <p class="storia-card-body">tra le persone — le gerarchie si dissolvono quando tutti cantano all'unisono, CEO e stagista compresi</p>
+        <div class="storia-card-title" data-i18n="sb.card.bar.title">Barriere</div>
+        <p class="storia-card-body" data-i18n="sb.card.bar.body">tra le persone — le gerarchie si dissolvono quando tutti cantano all'unisono, CEO e stagista compresi</p>
       </div>
     </div>
   </div>
@@ -784,30 +832,30 @@ footer {
 
 <!-- ── TEAM BENEFITS ── -->
 <section id="benefits">
-  <h2 class="section-title">Cosa porta al tuo team</h2>
+  <h2 class="section-title" data-i18n="sb.benefits.title">Cosa porta al tuo team</h2>
   <div class="benefits-grid">
 
     <div class="benefit-card">
       <div class="benefit-num">01</div>
       <div>
-        <div class="benefit-title">Connessione reale, non artificiale</div>
-        <p class="benefit-body">In 60 minuti di canto insieme, il senso di appartenenza generato è paragonabile a mesi di frequentazione. Non si tratta di attività costruite a tavolino — si tratta di un meccanismo biologico che funziona su chiunque, indipendentemente dal ruolo o dall'anzianità.</p>
+        <div class="benefit-title" data-i18n="sb.b1.title">Connessione reale, non artificiale</div>
+        <p class="benefit-body" data-i18n="sb.b1.body">In 60 minuti di canto insieme, il senso di appartenenza generato è paragonabile a mesi di frequentazione. Non si tratta di attività costruite a tavolino — si tratta di un meccanismo biologico che funziona su chiunque, indipendentemente dal ruolo o dall'anzianità.</p>
       </div>
     </div>
 
     <div class="benefit-card">
       <div class="benefit-num">02</div>
       <div>
-        <div class="benefit-title">Energia e presenza dopo l'evento</div>
-        <p class="benefit-body">Il canto attiva il sistema delle endorfine e abbassa il cortisolo — il principale marcatore di stress. I partecipanti tornano al lavoro con un livello di energia e leggerezza misurabile. Non è motivazione da palco: è fisiologia.</p>
+        <div class="benefit-title" data-i18n="sb.b2.title">Energia e presenza dopo l'evento</div>
+        <p class="benefit-body" data-i18n="sb.b2.body">Il canto attiva il sistema delle endorfine e abbassa il cortisolo — il principale marcatore di stress. I partecipanti tornano al lavoro con un livello di energia e leggerezza misurabile. Non è motivazione da palco: è fisiologia.</p>
       </div>
     </div>
 
     <div class="benefit-card">
       <div class="benefit-num">03</div>
       <div>
-        <div class="benefit-title">Un ricordo condiviso che dura</div>
-        <p class="benefit-body">Il cervello elabora la musica in modo diverso dal linguaggio: coinvolge la memoria emotiva e procedurale. Una canzone imparata insieme diventa un ancoraggio — qualcosa a cui tornare, qualcosa che unisce anche dopo che l'evento è finito.</p>
+        <div class="benefit-title" data-i18n="sb.b3.title">Un ricordo condiviso che dura</div>
+        <p class="benefit-body" data-i18n="sb.b3.body">Il cervello elabora la musica in modo diverso dal linguaggio: coinvolge la memoria emotiva e procedurale. Una canzone imparata insieme diventa un ancoraggio — qualcosa a cui tornare, qualcosa che unisce anche dopo che l'evento è finito.</p>
       </div>
     </div>
 
@@ -821,19 +869,19 @@ footer {
 
     <div class="numero-item">
       <div class="numero-value">55<sup>+</sup></div>
-      <div class="numero-label">Eventi realizzati</div>
+      <div class="numero-label" data-i18n="sb.numeri.events">Eventi realizzati</div>
       <div class="numero-rule"></div>
     </div>
 
     <div class="numero-item">
       <div class="numero-value">20.000<sup>+</sup></div>
-      <div class="numero-label">Persone fatte cantare</div>
+      <div class="numero-label" data-i18n="sb.numeri.people">Persone fatte cantare</div>
       <div class="numero-rule"></div>
     </div>
 
     <div class="numero-item">
       <div class="numero-value">39</div>
-      <div class="numero-label">Brani diversi</div>
+      <div class="numero-label" data-i18n="sb.numeri.songs">Brani diversi</div>
       <div class="numero-rule"></div>
     </div>
 
@@ -845,36 +893,36 @@ footer {
 <section id="testimonial">
   <span class="testimonial-mark">"</span>
   <p class="testimonial-quote">
-    Ero scettico. Due ore dopo ero completamente convertito. Tutto il team stava sorridendo. È stato il momento più umano che avevamo condiviso in anni.
+    <span data-i18n="sb.testimonial">Ero scettico. Due ore dopo ero completamente convertito. Tutto il team stava sorridendo. È stato il momento più umano che avevamo condiviso in anni.</span>
   </p>
   <div class="testimonial-source">
-    Partecipante, evento SingBuilding — Milano
+    <span data-i18n="sb.testimonial.source">Partecipante, evento SingBuilding — Milano</span>
   </div>
 </section>
 
 
 <!-- ── CONTESTI ── -->
 <section id="contesti">
-  <h2 class="contesti-headline">Si adatta a ogni contesto</h2>
+  <h2 class="contesti-headline" data-i18n="sb.contesti.title">Si adatta a ogni contesto</h2>
   <div class="contesti-list">
-    <span class="contesto-tag">Festa aziendale</span>
-    <span class="contesto-tag">Offsite</span>
-    <span class="contesto-tag">Conferenze &amp; convention</span>
-    <span class="contesto-tag">Kick-off di inizio anno</span>
-    <span class="contesto-tag">Onboarding</span>
-    <span class="contesto-tag">Retreats</span>
-    <span class="contesto-tag">Fiere ed eventi pubblici</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx1">Festa aziendale</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx2">Offsite</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx3">Conferenze &amp; convention</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx4">Kick-off di inizio anno</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx5">Onboarding</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx6">Retreats</span>
+    <span class="contesto-tag" data-i18n-html="sb.ctx7">Fiere ed eventi pubblici</span>
   </div>
 </section>
 
 
 <!-- ── CTA / CONTACT ── -->
 <section id="contact">
-  <h2 class="contact-headline">Dacci il LA.</h2>
+  <h2 class="contact-headline" data-i18n="sb.contact.headline">Dacci il LA.</h2>
   <p class="contact-sub">
-    Ci piacerebbe progettare un'esperienza SingBuilding per il tuo team.
+    <span data-i18n="sb.contact.sub">Ci piacerebbe progettare un'esperienza SingBuilding per il tuo team.</span>
   </p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary">Parliamoci →</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="sb.contact.btn">Parliamoci →</a>
 </section>
 
 
@@ -883,14 +931,14 @@ footer {
   <div class="footer-grid">
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
     </div>
     <div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
         <li><a href="singbuilding.html">SingBuilding</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#date">Prossime date</a></li>
+        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
       </ul>
     </div>
     <div>
@@ -912,7 +960,7 @@ footer {
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© HardKoro — Tutti i diritti riservati.</div>
+  <div class="footer-bottom"><span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span></div>
 </footer>
 
 
@@ -936,5 +984,6 @@ footer {
 
 
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>
