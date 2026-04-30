@@ -458,6 +458,9 @@ footer {
 }
 
 
+/* hide nav-right toggle on mobile; revealed in media query below */
+.nav-right .lang-toggle { display: none; }
+
 /* ── RESPONSIVE ── */
 @media (min-width: 640px) {
   .nav-mobile-menu { max-height: 0 !important; opacity: 0 !important; pointer-events: none !important; padding: 0 !important; }
@@ -486,9 +489,7 @@ footer {
 }
 
 /* ── LANG TOGGLE ── */
-/* Nav-right instance hidden on mobile; only drawer instance shows */
-.nav-right .lang-toggle { display: none; }
-
+/* Nav-right instance: hidden mobile-first (override in 640px query above) */
 .lang-toggle {
   display: flex;
   align-items: center;
