@@ -10,7 +10,54 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HardKoro</title>
+<!-- ── SEO ── -->
+<title>HardKoro — Popup Coro</title>
+<meta name="description" content="HardKoro è un coro in formato pop-up. Nessuna selezione, nessun impegno fisso. Ti presenti, ti diamo il testo, il Maestro ti guida, tu canti.">
+<meta name="author" content="HardKoro">
+<link rel="canonical" href="https://www.hardkoro.com/">
+
+<!-- ── OPEN GRAPH ── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hardkoro.com/">
+<meta property="og:title" content="HardKoro — Coro pop-up">
+<meta property="og:description" content="Ti presenti. Ti diamo il testo. Il Maestro guida. Tu canti.">
+<meta property="og:image" content="https://www.hardkoro.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="HardKoro">
+
+<!-- ── TWITTER / X ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@hardkoro_">
+<meta name="twitter:title" content="HardKoro — Coro pop-up">
+<meta name="twitter:description" content="Ti presenti. Ti diamo il testo. Il Maestro guida. Tu canti.">
+<meta name="twitter:image" content="https://www.hardkoro.com/og-image.jpg">
+
+<!-- ── STRUCTURED DATA ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "HardKoro",
+  "url": "https://www.hardkoro.com",
+  "description": "HardKoro è un coro in formato pop-up. Nessuna selezione, nessun impegno fisso. Ti presenti, ti diamo il testo, il Maestro ti guida, tu canti.",
+  "image": "https://www.hardkoro.com/og-image.jpg",
+  "email": "hello@hardkoro.com",
+  "sameAs": [
+    "https://www.instagram.com/hardkoro_/",
+    "https://www.youtube.com/@hardcoro_",
+    "https://www.tiktok.com/@hardkoro_"
+  ]
+}
+</script>
+
+<!-- ── FAVICON ── -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
 
 
 <style>
@@ -59,7 +106,6 @@ nav {
   height: 100%;
 }
 
-/* Logo placeholder — swap with <img src="HARDKORO_H.svg"> when available */
 .nav-logo-svg {
   height: 34px; /* matches hamburger visual height */
   width: auto;
@@ -623,16 +669,16 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* ── RESPONSIVE: TABLET + ── */
-/* lang toggle hidden on mobile (shown in 640px query below) */
-.lang-toggle { display: none; }
+/* hide nav-right toggle on mobile; revealed in media query below */
+.nav-right .lang-toggle { display: none; }
 
+/* ── RESPONSIVE: TABLET + ── */
 @media (min-width: 640px) {
   .nav-mobile-menu { max-height: 0 !important; opacity: 0 !important; pointer-events: none !important; padding: 0 !important; }
   .nav-hamburger { display: none; }
   .nav-links { display: flex; }
   .nav-cta { display: inline-block; }
-  .lang-toggle { display: flex; align-items: center; gap: 0.3rem; margin-left: 0.5rem; }
+  .nav-right .lang-toggle { display: flex; }
 
   #hero { padding: 0 2.5rem 5rem; }
 
@@ -660,6 +706,13 @@ footer {
 }
 
 /* ── LANG TOGGLE ── */
+/* Nav-right instance: hidden mobile-first (override in 640px query above) */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.75rem;
+}
 .lang-toggle button {
   background: none;
   border: none;
@@ -670,30 +723,32 @@ footer {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.45);
-  padding: 0.15rem 0;
+  padding: 0.2rem 0;
   transition: color 0.2s;
   line-height: 1;
 }
-.lang-toggle button:hover,
+.lang-toggle button:hover { color: var(--white); }
 .lang-toggle button.active { color: var(--white); }
 .lang-sep {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   color: rgba(255,255,255,0.25);
   line-height: 1;
-  user-select: none;
+  pointer-events: none;
 }
-/* Mobile drawer version */
+/* Mobile drawer toggle — full width row */
 .nav-mobile-menu .lang-toggle {
-  display: flex;
-  align-items: center;
+  margin-left: 0;
+  padding: 0.9rem 0;
+  border-bottom: none;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 0;
 }
 .nav-mobile-menu .lang-toggle button {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.5);
 }
+.nav-mobile-menu .lang-toggle button.active { color: var(--white); }
+.nav-mobile-menu .lang-sep { font-size: 0.75rem; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -704,17 +759,7 @@ footer {
 <!-- ── NAV ── -->
 <nav>
   <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
-    <!--
-      Replace with:
-      <img src="HARDKORO_H.svg" class="nav-logo-svg" alt="HardKoro">
-      OR the inline SVG markup.
-      The placeholder below keeps layout intact until the file is dropped in.
-    -->
-    <svg class="nav-logo-svg" viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
-      <rect width="340" height="34" fill="none"/>
-      <text x="0" y="26" font-family="'DM Sans', sans-serif" font-weight="700"
-        font-size="24" fill="#ffffff" letter-spacing="5">HARDKORO</text>
-    </svg>
+    <img src="HK_Blue_H.svg" class="nav-logo-svg" alt="HardKoro">
   </a>
 
   <div class="nav-right">
@@ -724,8 +769,7 @@ footer {
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
-    <div class="lang-toggle" aria-label="Lingua / Language"><button onclick="window.HK_LANG&&window.HK_LANG.set('it')" data-lang="it">IT</button><span class="lang-sep">|</span><button onclick="window.HK_LANG&&window.HK_LANG.set('en')" data-lang="en">EN</button></div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.aria-menu" aria-expanded="false">
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -737,7 +781,6 @@ footer {
   <a href="singbuilding.html">SingBuilding</a>
   <a href="contact.html">Contact</a>
   <a href="#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
-  <div class="lang-toggle" aria-label="Lingua / Language"><button onclick="window.HK_LANG&&window.HK_LANG.set('it')" data-lang="it">IT</button><span class="lang-sep">|</span><button onclick="window.HK_LANG&&window.HK_LANG.set('en')" data-lang="en">EN</button></div>
 </div>
 
 
@@ -749,32 +792,28 @@ footer {
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="hero-headline">
-      <span data-i18n-html="i.hero">Un coro pop-up.<br>Ti presenti. Il Maestro guida. Tu canti.</span>
-    </h1>
-    <a href="#date" class="btn-primary" data-i18n="i.hero-cta">Prossime date →</a>
+    <h1 class="hero-headline" data-i18n-html="index.hero.headline">Un coro pop-up.<br>Ti presenti. Il Maestro guida. Tu canti.</h1>
+    <a href="#date" class="btn-primary" data-i18n="index.hero.cta">Prossime date →</a>
   </div>
 </section>
 
 
 <!-- ── SECTION 2: COME FUNZIONA ── -->
 <section id="come-funziona">
-  <h2 class="section-title">
-    <span data-i18n-html="i.s2-title">Nessuna prova.<br>Nessun pubblico.<br>Chi c'è, viene per cantare.</span>
-  </h2>
+  <h2 class="section-title" data-i18n-html="index.s2.title">Nessuna prova.<br>Nessun pubblico.<br>Chi c'è, viene per cantare.</h2>
 
-  <p class="section-body"><span data-i18n="i.s2-body">HardKoro trasforma una stanza piena di sconosciuti in un coro enorme e inarrestabile. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque).</span></p>
+  <p class="section-body" data-i18n="index.s2.body">HardKoro trasforma una stanza piena di sconosciuti in un coro enorme e inarrestabile. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque).</p>
 </section>
 
 
 <!-- ── SECTION 3: PROSSIME DATE ── -->
 <section id="date">
-  <h2 class="section-title" data-i18n="i.s3-title">Vieni a cantare</h2>
+  <h2 class="section-title" data-i18n="index.s3.title">Vieni a cantare</h2>
 
   <div class="dates-list">
     <div class="dates-header">
-      <span class="col-date" data-i18n="i.s3-date">Data</span>
-      <span class="col-place" data-i18n="i.s3-place">Città &amp; Venue</span>
+      <span class="col-date" data-i18n="index.s3.col-date">Data</span>
+      <span class="col-place" data-i18n-html="index.s3.col-place">Città &amp; Venue</span>
       <span class="col-btn"></span>
     </div>
     <!-- Rows are injected here by loadEvents() -->
@@ -789,7 +828,7 @@ footer {
 
 <!-- ── SECTION 4: HARDKORO IN ACTION ── -->
 <section id="action">
-  <h2 class="section-title" data-i18n="i.s4-title">HardKoro in action</h2>
+  <h2 class="section-title" data-i18n="index.s4.title">HardKoro in action</h2>
 
   <div class="video-grid">
     <div class="video-card">
@@ -813,7 +852,7 @@ footer {
 
   <div class="video-more">
     <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener">
-      <span data-i18n="i.s4-yt">Guarda tutti i video su YouTube ↗</span>
+      <span data-i18n="index.s4.yt">Guarda tutti i video su YouTube ↗</span>
     </a>
   </div>
 </section>
@@ -825,7 +864,7 @@ footer {
 
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line"><span data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</span></p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
     </div>
 
     <div>
@@ -833,7 +872,7 @@ footer {
         <li><a href="about.html">About</a></li>
         <li><a href="singbuilding.html">SingBuilding</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#date">Prossime date</a></li>
+        <li><a href="#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
       </ul>
     </div>
 
@@ -859,7 +898,7 @@ footer {
   </div>
 
   <div class="footer-bottom">
-    <span data-i18n="footer.copy">© HardKoro — Tutti i diritti riservati.</span>
+    <span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span>
   </div>
 </footer>
 
@@ -967,7 +1006,7 @@ footer {
       .sort((a, b) => a.date.localeCompare(b.date));
 
     if (upcoming.length === 0) {
-      container.innerHTML = '<p class="events-empty">Nessuna data in programma al momento.<br>Torna presto.</p>';
+      container.innerHTML = `<p class='events-empty' data-i18n-html='events.empty'>${window.HK_LANG ? window.HK_LANG.strings[window.HK_LANG.get()]['events.empty'] : 'Nessuna data in programma al momento.<br>Torna presto.'}</p>`;
       return;
     }
 
@@ -1034,13 +1073,12 @@ footer {
       renderEvents(events);
     } catch (err) {
       console.error('HardKoro events load error:', err);
-      container.innerHTML = '<p class="events-error">Impossibile caricare le date. Riprova più tardi.</p>';
+      container.innerHTML = `<p class='events-error' data-i18n='events.error'>${window.HK_LANG ? window.HK_LANG.strings[window.HK_LANG.get()]['events.error'] : 'Impossibile caricare le date. Riprova più tardi.'}</p>`;
     }
   }
 
   loadEvents();
 </script>
-
 <script src="i18n.js"></script>
 </body>
 </html>
