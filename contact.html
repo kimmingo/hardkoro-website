@@ -1,56 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65VYTE51LP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-65VYTE51LP');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ── SEO ── -->
 <title>Contact — HardKoro</title>
-<meta name="description" content="HardKoro è un coro in formato pop-up. Nessuna selezione, nessun impegno fisso. Ti presenti, ti diamo il testo, il Maestro ti guida, tu canti.">
-<meta name="author" content="HardKoro">
-<link rel="canonical" href="https://www.hardkoro.com/contact.html">
-
-<!-- ── OPEN GRAPH ── -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.hardkoro.com/contact.html">
-<meta property="og:title" content="HardKoro — Coro pop-up">
-<meta property="og:description" content="Ti presenti. Ti diamo il testo. Il Maestro guida. Tu canti.">
-<meta property="og:image" content="https://www.hardkoro.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="it_IT">
-<meta property="og:site_name" content="HardKoro">
-
-<!-- ── TWITTER / X ── -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@hardkoro_">
-<meta name="twitter:title" content="HardKoro — Coro pop-up">
-<meta name="twitter:description" content="Ti presenti. Ti diamo il testo. Il Maestro guida. Tu canti.">
-<meta name="twitter:image" content="https://www.hardkoro.com/og-image.jpg">
-
-<!-- ── STRUCTURED DATA ── -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "HardKoro",
-  "url": "https://www.hardkoro.com",
-  "description": "HardKoro è un coro in formato pop-up. Nessuna selezione, nessun impegno fisso. Ti presenti, ti diamo il testo, il Maestro ti guida, tu canti.",
-  "image": "https://www.hardkoro.com/og-image.jpg",
-  "email": "hello@hardkoro.com",
-  "sameAs": [
-    "https://www.instagram.com/hardkoro_/",
-    "https://www.youtube.com/@hardcoro_",
-    "https://www.tiktok.com/@hardkoro_"
-  ]
-}
-</script>
-
-<!-- ── FAVICON ── -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-
 
 
 <style>
@@ -294,16 +254,16 @@ footer {
 }
 .contact-option:hover .option-btn { background: var(--blue-dk); }
 
-/* hide nav-right toggle on mobile; revealed in media query below */
-.nav-right .lang-toggle { display: none; }
-
 /* ── RESPONSIVE ── */
+/* lang toggle hidden on mobile (shown in 640px query below) */
+.lang-toggle { display: none; }
+
 @media (min-width: 640px) {
   .nav-mobile-menu { max-height: 0 !important; opacity: 0 !important; pointer-events: none !important; padding: 0 !important; }
   .nav-hamburger { display: none; }
   .nav-links { display: flex; }
   .nav-cta { display: inline-block; }
-  .nav-right .lang-toggle { display: flex; }
+  .lang-toggle { display: flex; align-items: center; gap: 0.3rem; margin-left: 0.5rem; }
   #page { padding-left: 2.5rem; padding-right: 2.5rem; }
   footer { padding-left: 2.5rem; padding-right: 2.5rem; }
   .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -317,13 +277,6 @@ footer {
 }
 
 /* ── LANG TOGGLE ── */
-/* Nav-right instance: hidden mobile-first (override in 640px query above) */
-.lang-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-left: 0.75rem;
-}
 .lang-toggle button {
   background: none;
   border: none;
@@ -334,32 +287,30 @@ footer {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.45);
-  padding: 0.2rem 0;
+  padding: 0.15rem 0;
   transition: color 0.2s;
   line-height: 1;
 }
-.lang-toggle button:hover { color: var(--white); }
+.lang-toggle button:hover,
 .lang-toggle button.active { color: var(--white); }
 .lang-sep {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: rgba(255,255,255,0.25);
   line-height: 1;
-  pointer-events: none;
+  user-select: none;
 }
-/* Mobile drawer toggle — full width row */
+/* Mobile drawer version */
 .nav-mobile-menu .lang-toggle {
-  margin-left: 0;
-  padding: 0.9rem 0;
-  border-bottom: none;
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  padding: 0.9rem 0;
 }
 .nav-mobile-menu .lang-toggle button {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.45);
 }
-.nav-mobile-menu .lang-toggle button.active { color: var(--white); }
-.nav-mobile-menu .lang-sep { font-size: 0.75rem; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -370,7 +321,11 @@ footer {
 <!-- ── NAV ── -->
 <nav>
   <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
-    <img src="HK_Blue_H.svg" class="nav-logo-svg" alt="HardKoro">
+    <svg class="nav-logo-svg" viewBox="0 0 340 34" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="34" fill="none"/>
+      <text x="0" y="26" font-family="'DM Sans', sans-serif" font-weight="700"
+        font-size="24" fill="#ffffff" letter-spacing="5">HARDKORO</text>
+    </svg>
   </a>
   <div class="nav-right">
     <ul class="nav-links">
@@ -379,7 +334,8 @@ footer {
       <li><a href="contact.html" aria-current="page">Contact</a></li>
     </ul>
     <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
+    <div class="lang-toggle" aria-label="Lingua / Language"><button onclick="window.HK_LANG&&window.HK_LANG.set('it')" data-lang="it">IT</button><span class="lang-sep">|</span><button onclick="window.HK_LANG&&window.HK_LANG.set('en')" data-lang="en">EN</button></div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.aria-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -390,33 +346,36 @@ footer {
   <a href="singbuilding.html">SingBuilding</a>
   <a href="contact.html">Contact</a>
   <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+  <div class="lang-toggle" aria-label="Lingua / Language"><button onclick="window.HK_LANG&&window.HK_LANG.set('it')" data-lang="it">IT</button><span class="lang-sep">|</span><button onclick="window.HK_LANG&&window.HK_LANG.set('en')" data-lang="en">EN</button></div>
 </div>
 
 
 <!-- ── PAGE ── -->
 <main id="page">
 
-  <h1 class="page-headline" data-i18n="contact.headline">Fatti sentire</h1>
+  <h1 class="page-headline">
+    <span data-i18n="c.h">Fatti sentire</span>
+  </h1>
   <div class="contact-options">
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
        target="_blank" rel="noopener noreferrer"
        class="contact-option">
       <div class="option-text">
-        <div class="option-title" data-i18n-html="contact.opt1.title">Collaborazioni &amp; SingBuilding</div>
-        <div class="option-sub" data-i18n="contact.opt1.sub">Vuoi portare HardKoro al tuo team o collaborare con noi?</div>
+        <div class="option-title" data-i18n="c.o1t">Collaborazioni &amp; SingBuilding</div>
+        <div class="option-sub"><span data-i18n="c.o1s">Vuoi portare HardKoro al tuo team o collaborare con noi?</span></div>
       </div>
-      <span class="option-btn" data-i18n="contact.opt1.btn">Parliamoci →</span>
+      <span class="option-btn" data-i18n="c.o1btn">Parliamoci →</span>
     </a>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
        target="_blank" rel="noopener noreferrer"
        class="contact-option">
       <div class="option-text">
-        <div class="option-title" data-i18n="contact.opt2.title">Richieste media</div>
-        <div class="option-sub" data-i18n="contact.opt2.sub">Press kit, interviste, materiali fotografici.</div>
+        <div class="option-title" data-i18n="c.o2t">Richieste media</div>
+        <div class="option-sub"><span data-i18n="c.o2s">Press kit, interviste, materiali fotografici.</span></div>
       </div>
-      <span class="option-btn" data-i18n="contact.opt2.btn">Contattaci →</span>
+      <span class="option-btn" data-i18n="c.o2btn">Contattaci →</span>
     </a>
 
   </div>
@@ -430,14 +389,14 @@ footer {
   <div class="footer-grid">
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line" data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</p>
+      <p class="footer-brand-line"><span data-i18n-html="footer.tagline">Canto collettivo.<br>Nessun giudizio. Solo presenza.</span></p>
     </div>
     <div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
         <li><a href="singbuilding.html">SingBuilding</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
+        <li><a href="index.html#date">Prossime date</a></li>
       </ul>
     </div>
     <div>
@@ -459,7 +418,7 @@ footer {
       </div>
     </div>
   </div>
-  <div class="footer-bottom"><span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span></div>
+  <div class="footer-bottom"><span data-i18n="footer.copy">© HardKoro — Tutti i diritti riservati.</span></div>
 </footer>
 
 
@@ -481,6 +440,7 @@ footer {
     });
   });
 </script>
+
 <script src="i18n.js"></script>
 </body>
 </html>
