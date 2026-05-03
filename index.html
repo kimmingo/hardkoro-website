@@ -287,6 +287,26 @@ nav {
   position: relative;
   z-index: 2;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hero vertical logo */
+.hero-logo-v {
+  width: clamp(160px, 40vw, 320px);
+  height: auto;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Nav logo fade transition */
+.nav-logo {
+  transition: opacity 0.3s ease;
+}
+.nav-logo.logo-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero-headline {
@@ -758,7 +778,7 @@ footer {
 
 <!-- ── NAV ── -->
 <nav>
-  <a href="index.html" class="nav-logo" aria-label="HardKoro Home">
+  <a href="index.html" class="nav-logo logo-hidden" id="navLogo" aria-label="HardKoro Home">
     <img src="HK_Blue_H.svg" class="nav-logo-svg" alt="HardKoro">
   </a>
 
@@ -792,7 +812,8 @@ footer {
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="hero-headline" data-i18n-html="index.hero.headline">Un coro pop-up.<br>Ti presenti. Il Maestro guida. Tu canti.</h1>
+    <img src="HK_Blue_V.svg" alt="HardKoro" class="hero-logo-v" id="heroLogoV">
+    <h1 class="hero-headline" data-i18n-html="index.hero.headline">Ti presenti. Il Maestro guida. Tu canti.</h1>
     <a href="#date" class="btn-primary" data-i18n="index.hero.cta">Prossime date →</a>
   </div>
 </section>
@@ -904,6 +925,31 @@ footer {
 
 
 <script>
+  // ── LOGO SWAP: hero logo ↔ nav logo ──────────────────────
+  // Show nav logo only when the hero vertical logo is scrolled offscreen.
+  // Never two logos visible at once.
+  const heroLogoV = document.getElementById('heroLogoV');
+  const navLogo   = document.getElementById('navLogo');
+
+  if (heroLogoV && navLogo) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // entry.isIntersecting = hero logo is (at least partially) visible
+        if (entry.isIntersecting) {
+          navLogo.classList.add('logo-hidden');
+        } else {
+          navLogo.classList.remove('logo-hidden');
+        }
+      },
+      {
+        // Fire as soon as the logo starts leaving / re-entering the viewport
+        threshold: 0
+      }
+    );
+    observer.observe(heroLogoV);
+  }
+
+
   // ── HAMBURGER ──────────────────────────────────────────────
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
