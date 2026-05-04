@@ -25,15 +25,15 @@
       'nav.menu-label':  'Apri menu',
 
       /* ── FOOTER (shared) ── */
-      'footer.tagline':  'Canto collettivo.<br>Nessun giudizio. Solo presenza.',
+      'footer.tagline':  'Nessuna prova.<br>Nessun pubblico.<br>Ti presenti. Il Maestro guida. Tu canti.',
       'footer.upcoming': 'Prossime date',
       'footer.rights':   '© HardKoro — Tutti i diritti riservati.',
 
       /* ─────────── INDEX ─────────── */
-      'index.hero.headline':   'Un coro pop-up.<br>Ti presenti. Il Maestro guida. Tu canti.',
+      'index.hero.headline':   'Ti presenti. Il Maestro guida. Tu canti.',
       'index.hero.cta':        'Prossime date →',
       'index.s2.title':        'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, viene per cantare.',
-      'index.s2.body':         'HardKoro trasforma una stanza piena di sconosciuti in un coro enorme e inarrestabile. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque).',
+      'index.s2.body':         'HardKoro trasforma una stanza piena di sconosciuti in un coro spontaneo. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque).',
       'index.s3.title':        'Vieni a cantare',
       'index.s3.col-date':     'Data',
       'index.s3.col-place':    'Città &amp; Venue',
@@ -117,15 +117,15 @@
       'nav.menu-label':  'Open menu',
 
       /* ── FOOTER (shared) ── */
-      'footer.tagline':  'Collective singing.<br>No judgement. Just presence.',
+      'footer.tagline':  'No rehearsal.<br>No audience.<br>You show up. The Maestro leads. You sing.',
       'footer.upcoming': 'Upcoming dates',
       'footer.rights':   '© HardKoro — All rights reserved.',
 
       /* ─────────── INDEX ─────────── */
-      'index.hero.headline':   'A pop-up choir.<br>You show up. The Maestro leads. You sing.',
+      'index.hero.headline':   'You show up. The Maestro leads. You sing.',
       'index.hero.cta':        'Upcoming dates →',
       'index.s2.title':        'No rehearsal.<br>No audience.<br>Everyone here is here to sing.',
-      'index.s2.body':         'HardKoro turns a room full of strangers into a huge, unstoppable choir. We teach every song from scratch — no experience needed. Come as you are (maybe with a friend, or five).',
+      'index.s2.body':         'HardKoro turns a room full of strangers into a spontaneous choir. No auditions, no fixed commitment. We teach every song from scratch — no experience needed. Come as you are (maybe with a friend, or five).',
       'index.s3.title':        'Come and sing',
       'index.s3.col-date':     'Date',
       'index.s3.col-place':    'City &amp; Venue',
