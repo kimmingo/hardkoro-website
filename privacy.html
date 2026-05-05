@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — HardKoro</title>
+<meta name="description" content="Privacy policy di HardKoro. Informazioni sul trattamento dei dati personali e sull'uso dei cookie.">
+<meta name="author" content="HardKoro">
+<link rel="canonical" href="https://www.hardkoro.com/privacy.html">
+<meta name="robots" content="noindex">
+
+<!-- ── FAVICON ── -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #262626;
+  --white:   #ffffff;
+  --blue:    #0000ff;
+  --blue-dk: #0000cc;
+  --mid:     #6b6b6b;
+  --sans:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: var(--black);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.nav-logo-svg {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  display: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.45);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+/* Hamburger */
+.nav-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu drawer */
+.nav-mobile-menu {
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  z-index: 190;
+  background: #262626;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem 1.5rem;
+  gap: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.38s cubic-bezier(.4,0,.2,1), opacity 0.25s, padding 0.3s;
+  pointer-events: none;
+}
+.nav-mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 0.5rem 1.5rem 2rem;
+  pointer-events: auto;
+}
+.nav-mobile-menu a {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: color 0.2s;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a.nav-cta {
+  display: block;
+  border: 1px solid rgba(255,255,255,0.4);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  color: var(--white);
+}
+
+/* ── PRIVACY CONTENT ── */
+#privacy-page {
+  padding: 7rem 1.5rem 5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.privacy-back {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: opacity 0.2s;
+}
+.privacy-back:hover { opacity: 0.65; }
+
+.privacy-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-updated {
+  font-size: 0.78rem;
+  color: var(--mid);
+  letter-spacing: 0.04em;
+  margin-bottom: 2.5rem;
+}
+
+.privacy-intro {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--black);
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(38,38,38,0.1);
+}
+
+.privacy-section {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(38,38,38,0.1);
+}
+
+.privacy-section:last-child {
+  border-bottom: none;
+}
+
+.privacy-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--black);
+}
+
+.privacy-section-body {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.privacy-section-body a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.privacy-section-body a:hover { opacity: 0.7; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem 1.5rem 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-name {
+  font-family: var(--sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.footer-brand-line {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-links a {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--white); }
+.social-icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em;
+}
+
+/* hide nav-right toggle on mobile */
+.nav-right .lang-toggle { display: none; }
+
+/* ── RESPONSIVE ── */
+@media (min-width: 640px) {
+  .nav-mobile-menu { max-height: 0 !important; opacity: 0 !important; pointer-events: none !important; padding: 0 !important; }
+  .nav-hamburger { display: none; }
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-block; }
+  .nav-right .lang-toggle { display: flex; }
+
+  #privacy-page { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+  footer { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+
+@media (min-width: 900px) {
+  nav { padding: 0 4rem; }
+  #privacy-page { padding-left: 4rem; padding-right: 4rem; max-width: 860px; }
+  footer { padding-left: 4rem; padding-right: 4rem; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+/* ── LANG TOGGLE ── */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.75rem;
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  padding: 0.2rem 0;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.lang-toggle button:hover { color: var(--white); }
+.lang-toggle button.active { color: var(--white); }
+.lang-sep {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  pointer-events: none;
+}
+.nav-mobile-menu .lang-toggle {
+  margin-left: 0;
+  padding: 0.9rem 0;
+  border-bottom: none;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.nav-mobile-menu .lang-toggle button {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+.nav-mobile-menu .lang-toggle button.active { color: var(--white); }
+.nav-mobile-menu .lang-sep { font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo" id="navLogo" aria-label="HardKoro Home">
+    <img src="HK_Blue_H.svg" class="nav-logo-svg" alt="HardKoro">
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="singbuilding.html">SingBuilding</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="about.html">About</a>
+  <a href="singbuilding.html">SingBuilding</a>
+  <a href="contact.html">Contact</a>
+  <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+</div>
+
+
+<!-- ── PRIVACY CONTENT ── -->
+<main id="privacy-page">
+
+  <a href="index.html" class="privacy-back" data-i18n="privacy.back">← Torna alla home</a>
+
+  <h1 class="privacy-title" data-i18n="privacy.title">Privacy policy</h1>
+  <p class="privacy-updated" data-i18n="privacy.updated">Ultimo aggiornamento: maggio 2025</p>
+  <p class="privacy-intro" data-i18n="privacy.intro">HardKoro rispetta la tua privacy. Questa pagina spiega quali dati raccogliamo, perché e come puoi esercitare i tuoi diritti.</p>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s1.title">1. Titolare del trattamento</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s1.body">Il titolare del trattamento è HardKoro (hello@hardkoro.com). Per qualsiasi domanda relativa alla privacy puoi scriverci a questo indirizzo.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s2.title">2. Dati che raccogliamo</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s2.body">Raccogliamo dati solo se hai acconsentito all'uso dei cookie analitici. In quel caso, Google Analytics raccoglie informazioni anonime sull'utilizzo del sito: pagine visitate, provenienza del traffico, tipo di dispositivo e durata della visita. Non raccogliamo nomi, indirizzi email o altri dati personali identificabili a meno che tu non ci contatti direttamente.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s3.title">3. Finalità del trattamento</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s3.body">Utilizziamo i dati analitici esclusivamente per migliorare il sito e capire come le persone lo trovano. Non vendiamo né cediamo dati a terzi per finalità commerciali.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s4.title">4. Base giuridica</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s4.body">Il trattamento dei dati analitici avviene sulla base del tuo consenso esplicito (art. 6, par. 1, lett. a del GDPR), espresso tramite il banner cookie. Puoi revocare il consenso in qualsiasi momento svuotando i dati del sito dal tuo browser.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s5.title">5. Cookie</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s5.body">Utilizziamo Google Analytics (cookie analitici di terze parti) solo se hai dato il consenso. Non utilizziamo cookie di profilazione o pubblicitari. La tua scelta viene memorizzata nel tuo browser e puoi cambiarla in qualsiasi momento cancellando i dati locali del sito.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s6.title">6. Conservazione dei dati</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s6.body">I dati raccolti da Google Analytics vengono conservati per 14 mesi, dopodiché vengono eliminati automaticamente. I dati aggregati e anonimi possono essere conservati a tempo indeterminato.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s7.title">7. I tuoi diritti</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s7.body">Hai il diritto di accedere ai tuoi dati, richiederne la cancellazione, opporti al trattamento e presentare reclamo all'Autorità Garante per la protezione dei dati personali (Garante Privacy). Per esercitare questi diritti scrivici a hello@hardkoro.com.</p>
+  </div>
+
+  <div class="privacy-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.s8.title">8. Modifiche a questa policy</h2>
+    <p class="privacy-section-body" data-i18n="privacy.s8.body">Potremmo aggiornare questa privacy policy di tanto in tanto. Le modifiche saranno pubblicate su questa pagina con la data di aggiornamento.</p>
+  </div>
+
+</main>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer-brand-name">HardKoro</div>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">Nessuna prova.<br>Nessun pubblico.<br>Ti presenti. Il Maestro guida. Tu canti.</p>
+    </div>
+
+    <div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="singbuilding.html">SingBuilding</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
+        <li><a href="privacy.html"><span data-i18n="footer.privacy">Privacy policy</span></a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+          </svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span>
+  </div>
+</footer>
+
+
+<script>
+  // ── HAMBURGER ──────────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('aria-hidden', true);
+    });
+  });
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>
