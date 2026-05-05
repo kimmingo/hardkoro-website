@@ -110,6 +110,12 @@
       'contact.opt2.title':    'Richieste media',
       'contact.opt2.sub':      'Press kit, interviste, materiali fotografici.',
       'contact.opt2.btn':      'Contattaci →',
+
+      /* ─────────── COOKIE & PRIVACY ─────────── */
+      'footer.privacy':        'Privacy policy',
+      'cookie.text':           'Usiamo cookie analitici per capire come le persone trovano HardKoro. Puoi accettare o rifiutare — il sito funziona in entrambi i casi. <a href="privacy.html">Privacy policy</a>',
+      'cookie.accept':         'Accetta',
+      'cookie.reject':         'Rifiuta',
     },
 
     en: {
@@ -203,6 +209,12 @@
       'contact.opt2.title':    'Media enquiries',
       'contact.opt2.sub':      'Press kit, interviews, photo materials.',
       'contact.opt2.btn':      'Get in touch →',
+
+      /* ─────────── COOKIE & PRIVACY ─────────── */
+      'footer.privacy':        'Privacy policy',
+      'cookie.text':           'We use analytics cookies to understand how people find HardKoro. You can accept or decline — the site works either way. <a href="privacy.html">Privacy policy</a>',
+      'cookie.accept':         'Accept',
+      'cookie.reject':         'Decline',
     }
   };
 
