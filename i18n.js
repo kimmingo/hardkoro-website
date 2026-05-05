@@ -33,7 +33,7 @@
       'index.hero.headline':   'Ti presenti. Il Maestro guida. Tu canti.',
       'index.hero.cta':        'Prossime date →',
       'index.s2.title':        'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, viene per cantare.',
-      'index.s2.body':         'HardKoro trasforma una stanza piena di sconosciuti in un coro spontaneo. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque).',
+      'index.s2.body':         'HardKoro trasforma una stanza piena di sconosciuti in un coro spontaneo. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amic*, o cinque).',
       'index.s3.title':        'Vieni a cantare',
       'index.s3.col-date':     'Data',
       'index.s3.col-place':    'Città &amp; Venue',
@@ -110,43 +110,6 @@
       'contact.opt2.title':    'Richieste media',
       'contact.opt2.sub':      'Press kit, interviste, materiali fotografici.',
       'contact.opt2.btn':      'Contattaci →',
-
-      /* ─────────── COOKIE BANNER ─────────── */
-      'footer.privacy':        'Privacy policy',
-      'cookie.text':           'Usiamo cookie analitici per capire come le persone trovano HardKoro. Puoi accettare o rifiutare — il sito funziona in entrambi i casi. <a href="privacy.html">Privacy policy</a>',
-      'cookie.accept':         'Accetta',
-      'cookie.reject':         'Rifiuta',
-
-      /* ─────────── PRIVACY PAGE ─────────── */
-      'privacy.title':         'Privacy policy',
-      'privacy.updated':       'Ultimo aggiornamento: maggio 2025',
-      'privacy.intro':         'HardKoro rispetta la tua privacy. Questa pagina spiega quali dati raccogliamo, perché e come puoi esercitare i tuoi diritti.',
-
-      'privacy.s1.title':      '1. Titolare del trattamento',
-      'privacy.s1.body':       'Il titolare del trattamento è HardKoro (hello@hardkoro.com). Per qualsiasi domanda relativa alla privacy puoi scriverci a questo indirizzo.',
-
-      'privacy.s2.title':      '2. Dati che raccogliamo',
-      'privacy.s2.body':       'Raccogliamo dati solo se hai acconsentito all\'uso dei cookie analitici. In quel caso, Google Analytics raccoglie informazioni anonime sull\'utilizzo del sito: pagine visitate, provenienza del traffico, tipo di dispositivo e durata della visita. Non raccogliamo nomi, indirizzi email o altri dati personali identificabili a meno che tu non ci contatti direttamente.',
-
-      'privacy.s3.title':      '3. Finalità del trattamento',
-      'privacy.s3.body':       'Utilizziamo i dati analitici esclusivamente per migliorare il sito e capire come le persone lo trovano. Non vendiamo né cediamo dati a terzi per finalità commerciali.',
-
-      'privacy.s4.title':      '4. Base giuridica',
-      'privacy.s4.body':       'Il trattamento dei dati analitici avviene sulla base del tuo consenso esplicito (art. 6, par. 1, lett. a del GDPR), espresso tramite il banner cookie. Puoi revocare il consenso in qualsiasi momento svuotando i dati del sito dal tuo browser.',
-
-      'privacy.s5.title':      '5. Cookie',
-      'privacy.s5.body':       'Utilizziamo Google Analytics (cookie analitici di terze parti) solo se hai dato il consenso. Non utilizziamo cookie di profilazione o pubblicitari. La tua scelta viene memorizzata nel tuo browser e puoi cambiarla in qualsiasi momento cancellando i dati locali del sito.',
-
-      'privacy.s6.title':      '6. Conservazione dei dati',
-      'privacy.s6.body':       'I dati raccolti da Google Analytics vengono conservati per 14 mesi, dopodiché vengono eliminati automaticamente. I dati aggregati e anonimi possono essere conservati a tempo indeterminato.',
-
-      'privacy.s7.title':      '7. I tuoi diritti',
-      'privacy.s7.body':       'Hai il diritto di accedere ai tuoi dati, richiederne la cancellazione, opporti al trattamento e presentare reclamo all\'Autorità Garante per la protezione dei dati personali (Garante Privacy). Per esercitare questi diritti scrivici a hello@hardkoro.com.',
-
-      'privacy.s8.title':      '8. Modifiche a questa policy',
-      'privacy.s8.body':       'Potremmo aggiornare questa privacy policy di tanto in tanto. Le modifiche saranno pubblicate su questa pagina con la data di aggiornamento.',
-
-      'privacy.back':          '← Torna alla home',
     },
 
     en: {
@@ -240,43 +203,6 @@
       'contact.opt2.title':    'Media enquiries',
       'contact.opt2.sub':      'Press kit, interviews, photo materials.',
       'contact.opt2.btn':      'Get in touch →',
-
-      /* ─────────── COOKIE BANNER ─────────── */
-      'footer.privacy':        'Privacy policy',
-      'cookie.text':           'We use analytics cookies to understand how people find HardKoro. You can accept or decline — the site works either way. <a href="privacy.html">Privacy policy</a>',
-      'cookie.accept':         'Accept',
-      'cookie.reject':         'Decline',
-
-      /* ─────────── PRIVACY PAGE ─────────── */
-      'privacy.title':         'Privacy policy',
-      'privacy.updated':       'Last updated: May 2025',
-      'privacy.intro':         'HardKoro respects your privacy. This page explains what data we collect, why, and how you can exercise your rights.',
-
-      'privacy.s1.title':      '1. Data controller',
-      'privacy.s1.body':       'The data controller is HardKoro (hello@hardkoro.com). For any privacy-related questions, please write to us at that address.',
-
-      'privacy.s2.title':      '2. Data we collect',
-      'privacy.s2.body':       'We only collect data if you have consented to analytics cookies. In that case, Google Analytics collects anonymous information about how the site is used: pages visited, traffic source, device type, and visit duration. We do not collect names, email addresses, or other personally identifiable data unless you contact us directly.',
-
-      'privacy.s3.title':      '3. Purpose of processing',
-      'privacy.s3.body':       'We use analytics data solely to improve the site and understand how people find it. We do not sell or share data with third parties for commercial purposes.',
-
-      'privacy.s4.title':      '4. Legal basis',
-      'privacy.s4.body':       'Analytics data is processed on the basis of your explicit consent (Art. 6(1)(a) GDPR), given via the cookie banner. You can withdraw consent at any time by clearing the site data in your browser.',
-
-      'privacy.s5.title':      '5. Cookies',
-      'privacy.s5.body':       'We use Google Analytics (third-party analytics cookies) only if you have given consent. We do not use profiling or advertising cookies. Your choice is stored in your browser and can be changed at any time by clearing local site data.',
-
-      'privacy.s6.title':      '6. Data retention',
-      'privacy.s6.body':       'Data collected by Google Analytics is retained for 14 months, after which it is automatically deleted. Aggregated and anonymised data may be retained indefinitely.',
-
-      'privacy.s7.title':      '7. Your rights',
-      'privacy.s7.body':       'You have the right to access your data, request its deletion, object to processing, and lodge a complaint with the relevant data protection authority. To exercise these rights, write to us at hello@hardkoro.com.',
-
-      'privacy.s8.title':      '8. Changes to this policy',
-      'privacy.s8.body':       'We may update this privacy policy from time to time. Changes will be published on this page with an updated date.',
-
-      'privacy.back':          '← Back to home',
     }
   };
 
