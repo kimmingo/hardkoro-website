@@ -42,8 +42,8 @@
       'events.loading':        'Caricamento date…',
       'events.empty':          'Ci stiamo scaldando la voce.<br>Nuove date in arrivo.',
       'events.error':          'Impossibile caricare le date. Riprova più tardi.',
-      'events.social.title':   'Per non perdere le prossime date',
-      'events.social.sub':     'Seguici su Instagram o sul nostro Canale WhatsApp.',
+      'events.social.title':   'Seguici. Ti diciamo noi quando si canta.',
+      'events.social.sub':     '',
 
       /* ─────────── ABOUT ─────────── */
       'about.hero':            'Polifonia in formato pop-up.',
@@ -137,8 +137,8 @@
       'events.loading':        'Loading dates…',
       'events.empty':          'We\'re warming up.<br>New dates coming soon.',
       'events.error':          'Could not load dates. Please try again later.',
-      'events.social.title':   'Stay on top of upcoming dates',
-      'events.social.sub':     'Follow us on Instagram or our WhatsApp Channel.',
+      'events.social.title':   'Follow us. We\'ll let you know when it\'s time to sing.',
+      'events.social.sub':     '',
 
       /* ─────────── ABOUT ─────────── */
       'about.hero':            'We believe that singing together changes something — inside you and around you.',

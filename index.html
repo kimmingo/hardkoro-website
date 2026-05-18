@@ -554,28 +554,28 @@ nav {
   border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
 }
 
 .events-social-title {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--white);
 }
 
 .events-social-sub {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.6;
+  display: none;
 }
 
 .events-social-icons {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  margin-top: 0.25rem;
 }
 
 .events-social-icons a {
@@ -902,8 +902,7 @@ footer {
 
   <!-- ── SOCIAL FOLLOW (always visible) ── -->
   <div class="events-social">
-    <div class="events-social-title" data-i18n="events.social.title">Per non perdere le prossime date</div>
-    <div class="events-social-sub" data-i18n="events.social.sub">Seguici su Instagram o sul nostro Canale WhatsApp.</div>
+    <div class="events-social-title" data-i18n="events.social.title">Seguici. Ti diciamo noi quando si canta.</div>
     <div class="events-social-icons">
 
       <!-- Instagram -->
