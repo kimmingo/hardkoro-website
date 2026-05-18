@@ -196,7 +196,7 @@ nav {
 
 .hero-headline {
   font-family: var(--sans);
-  font-size: clamp(2rem, 6vw, 4.25rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--white);
@@ -505,8 +505,8 @@ nav {
 /* ── SECTION: CTA / CONTACT ── */
 #contact {
   padding: 6rem 1.5rem 7rem;
-  background: var(--white);
-  color: var(--black);
+  background: var(--black);
+  color: var(--white);
 }
 
 .contact-label {
@@ -523,14 +523,14 @@ nav {
   font-size: clamp(1.75rem, 5vw, 3.25rem);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--black);
+  color: var(--white);
   max-width: 620px;
   margin-bottom: 1.25rem;
 }
 
 .contact-sub {
   font-size: 0.95rem;
-  color: var(--mid);
+  color: rgba(255,255,255,0.45);
   max-width: 440px;
   line-height: 1.7;
   margin-bottom: 3rem;
@@ -608,47 +608,6 @@ nav {
 }
 
 
-/* ── SECTION: CLIENTI ── */
-#clienti {
-  padding: 5rem 1.5rem;
-  background: var(--black);
-  color: var(--white);
-}
-
-.clienti-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 2rem;
-  align-items: center;
-  justify-items: center;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.cliente-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 0.5rem 1rem;
-}
-
-.cliente-logo img {
-  max-height: 36px;
-  width: auto;
-  max-width: 100%;
-  opacity: 0.55;
-  filter: brightness(0) invert(1);
-  transition: opacity 0.2s;
-  display: block;
-}
-.cliente-logo img:hover { opacity: 0.85; }
-
-@media (min-width: 640px) {
-  .clienti-grid { grid-template-columns: repeat(4, 1fr); gap: 0 3rem; }
-  .cliente-logo img { max-height: 32px; }
-}
-
 /* ── FOOTER ── */
 footer {
   background: var(--black);
@@ -702,8 +661,6 @@ footer {
   margin-bottom: 2rem;
 }
 
-#clienti .contesti-headline { color: var(--white); }
-
 /* hide nav-right toggle on mobile; revealed in media query below */
 .nav-right .lang-toggle { display: none; }
 
@@ -716,7 +673,7 @@ footer {
   .nav-right .lang-toggle { display: flex; }
 
   #hero { padding: 12rem 2.5rem 6rem; }
-  #storia, #benefits, #numeri, #testimonial, #contesti, #clienti, #contact { padding-left: 2.5rem; padding-right: 2.5rem; }
+  #storia, #benefits, #numeri, #testimonial, #contesti, #contact { padding-left: 2.5rem; padding-right: 2.5rem; }
   footer { padding-left: 2.5rem; padding-right: 2.5rem; }
 
   #storia { grid-template-columns: 1fr 1fr; }
@@ -737,7 +694,7 @@ footer {
 @media (min-width: 900px) {
   nav { padding: 0 4rem; }
   #hero { padding: 12rem 4rem 7rem; }
-  #storia, #benefits, #numeri, #testimonial, #contesti, #clienti, #contact { padding-left: 4rem; padding-right: 4rem; }
+  #storia, #benefits, #numeri, #testimonial, #contesti, #contact { padding-left: 4rem; padding-right: 4rem; }
   footer { padding-left: 4rem; padding-right: 4rem; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
   .benefits-grid { grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
@@ -963,26 +920,6 @@ footer {
     <span class="contesto-tag" data-i18n-html="sb.ctx5">Onboarding</span>
     <span class="contesto-tag" data-i18n-html="sb.ctx6">Retreats</span>
     <span class="contesto-tag" data-i18n-html="sb.ctx7">Fiere ed eventi pubblici</span>
-  </div>
-</section>
-
-
-<!-- ── CLIENTI ── -->
-<section id="clienti">
-  <h2 class="contesti-headline" data-i18n="sb.clienti.label">Si sono fidati di noi</h2>
-  <div class="clienti-grid">
-    <div class="cliente-logo">
-      <img src="AstraZeneca_logo.svg" alt="AstraZeneca">
-    </div>
-    <div class="cliente-logo">
-      <img src="Borsa_Italiana_logo_2.svg" alt="Borsa Italiana">
-    </div>
-    <div class="cliente-logo">
-      <img src="Generali_Logo.svg" alt="Generali">
-    </div>
-    <div class="cliente-logo">
-      <img src="Politecnico_di_Milano.svg" alt="Politecnico di Milano">
-    </div>
   </div>
 </section>
 
