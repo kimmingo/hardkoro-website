@@ -30,7 +30,7 @@
       'footer.rights':   '© HardKoro — Tutti i diritti riservati.',
 
       /* ─────────── INDEX ─────────── */
-      'index.hero.headline':   'Nessuna prova. Nessun pubblico. Chi c\'è, è lì per cantare.',
+      'index.hero.headline':   'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, è lì per cantare.',
       'index.hero.cta':        'Prossime date →',
       'index.s2.title':        'Ti presenti.<br>Il Maestro ti guida.<br>Tu canti.',
       'index.s2.body':         'HardKoro trasforma una sala piena di sconosciuti in un coro polifonico. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve grande esperienza, basta essere un minimo intonati. Se siamo in tanti suona meglio, porta un amico (o due o cinque).',
@@ -123,7 +123,7 @@
       'footer.rights':   '© HardKoro — All rights reserved.',
 
       /* ─────────── INDEX ─────────── */
-      'index.hero.headline':   'You show up. The Maestro leads. You sing.',
+      'index.hero.headline':   'No rehearsal.<br>No audience.<br>Everyone here is here to sing.',
       'index.hero.cta':        'Upcoming dates →',
       'index.s2.title':        'No rehearsal.<br>No audience.<br>Everyone here is here to sing.',
       'index.s2.body':         'HardKoro turns a room full of strangers into a spontaneous choir. No auditions, no fixed commitment. We teach every song from scratch — no experience needed. Come as you are (maybe with a friend, or five).',
