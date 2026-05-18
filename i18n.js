@@ -30,10 +30,10 @@
       'footer.rights':   '© HardKoro — Tutti i diritti riservati.',
 
       /* ─────────── INDEX ─────────── */
-      'index.hero.headline':   'Ti presenti. Il Maestro guida. Tu canti.',
+      'index.hero.headline':   'Nessuna prova. Nessun pubblico. Chi c'è, è lì per cantare.',
       'index.hero.cta':        'Prossime date →',
-      'index.s2.title':        'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, viene per cantare.',
-      'index.s2.body':         'HardKoro trasforma una stanza piena di sconosciuti in un coro spontaneo. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amic*, o cinque).',
+      'index.s2.title':        'Ti presenti.<br>Il Maestro ti guida.<br>Tu canti.',
+      'index.s2.body':         'HardKoro trasforma una sala piena di sconosciuti in un coro polifonico. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve grande esperienza, basta essere un minimo intonati. Se siamo in tanti suona meglio, porta un amico (o due o cinque).',
       'index.s3.title':        'Vieni a cantare',
       'index.s3.col-date':     'Data',
       'index.s3.col-place':    'Città &amp; Venue',
@@ -44,11 +44,11 @@
       'events.error':          'Impossibile caricare le date. Riprova più tardi.',
 
       /* ─────────── ABOUT ─────────── */
-      'about.hero':            'Crediamo che cantare insieme cambi qualcosa — dentro e intorno a te.',
-      'about.mission1':        'HardKoro nasce da un\'idea semplice: il canto collettivo non dovrebbe essere un privilegio di chi ha studiato musica. È per tutti — per chi canta stonato sotto la doccia, per chi non ha mai aperto uno spartito, per chi ha voglia di condividere qualcosa di vero con degli sconosciuti.',
-      'about.mission2':        'Ogni appuntamento è un esperimento sociale. Una stanza, una guida, una canzone da imparare insieme. Non ci sono prove, non c\'è pubblico, non c\'è giudizio. C\'è solo la voce — la tua, quella di tutti gli altri, e il momento in cui diventano una cosa sola.',
+      'about.hero':            'Polifonia in formato pop-up.',
+      'about.mission1':        'HardKoro nasce da un'idea semplice: il canto polifonico non è un privilegio riservato a chi ha studiato musica. È per tutti — per chi canta sotto la doccia, per chi non ha mai aperto uno spartito. ',
+      'about.mission2':        'Con repertori superpop, ogni appuntamento è un esperimento sociale: esporsi e provare brividi a fianco di sconosciuti. Non ci sono prove, non c'è pubblico, nessuno che ti giudica. Solo centinaia di voci che diventano una cosa sola.',
       'about.science.title':   'Perché funziona',
-      'about.science.intro':   'Non lo diciamo solo perché lo sentono i partecipanti — anche la ricerca lo dice. Cantare insieme con gli altri non è solo bello: è profondamente utile.',
+      'about.science.intro':   'Lo dicono le neuroscienze. Il canto collettivo migliora il benessere, e aumenta la fiducia, in sè e negli altri.',
       'about.card1.title':     'Il cuore sincronizza',
       'about.card1.body':      'Quando canti in gruppo, la frequenza cardiaca di chi canta tende ad allinearsi. Non è metafora — è fisiologia. Il ritmo condiviso crea coerenza biologica tra le persone presenti.',
       'about.card2.title':     'Le endorfine salgono',
@@ -62,11 +62,11 @@
       'about.card6.title':     'La memoria a lungo termine si attiva',
       'about.card6.body':      'Il cervello elabora la musica in modo diverso dal linguaggio, coinvolgendo aree legate alla memoria emotiva e procedurale. Imparare una canzone insieme è un\'esperienza che resta.',
       'about.cta.headline':    'Adesso tocca a te.',
-      'about.cta.sub':         'Nessuna esperienza richiesta. Solo voglia di esserci.',
-      'about.cta.btn':         'Vedi le prossime date →',
+      'about.cta.sub':         'Non servono cantori esperti, basta essere un minimo intonati.',
+      'about.cta.btn':         'Prossime date →',
 
       /* ─────────── SINGBUILDING ─────────── */
-      'sb.hero.headline':      'SingBuilding trasforma la tua organizzazione in un coro spontaneo e inarrestabile.',
+      'sb.hero.headline':      'Porta vibrazioni positive al lavoro con SingBuilding®',
       'sb.hero.sub':           'Nessuna prova, nessuna esperienza richiesta.',
       'sb.storia.headline':    'Il canto collettivo è il più antico strumento di coesione che l\'umanità conosca.',
       'sb.storia.body':        'Da milioni di anni, gli esseri umani usano il canto per sincronizzarsi, creare fiducia e abbattere le gerarchie. Prima dei meeting, prima delle slide, prima del team building con la corda — c\'era la voce. La scienza moderna non ha fatto altro che confermare ciò che i nostri antenati sapevano istintivamente.',
