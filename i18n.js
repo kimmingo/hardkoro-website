@@ -30,7 +30,7 @@
       'footer.rights':   '© HardKoro — Tutti i diritti riservati.',
 
       /* ─────────── INDEX ─────────── */
-      'index.hero.headline':   'Nessuna prova. Nessun pubblico. Chi c'è, è lì per cantare.',
+      'index.hero.headline':   'Nessuna prova. Nessun pubblico. Chi c\'è, è lì per cantare.',
       'index.hero.cta':        'Prossime date →',
       'index.s2.title':        'Ti presenti.<br>Il Maestro ti guida.<br>Tu canti.',
       'index.s2.body':         'HardKoro trasforma una sala piena di sconosciuti in un coro polifonico. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve grande esperienza, basta essere un minimo intonati. Se siamo in tanti suona meglio, porta un amico (o due o cinque).',
@@ -45,8 +45,8 @@
 
       /* ─────────── ABOUT ─────────── */
       'about.hero':            'Polifonia in formato pop-up.',
-      'about.mission1':        'HardKoro nasce da un'idea semplice: il canto polifonico non è un privilegio riservato a chi ha studiato musica. È per tutti — per chi canta sotto la doccia, per chi non ha mai aperto uno spartito. ',
-      'about.mission2':        'Con repertori superpop, ogni appuntamento è un esperimento sociale: esporsi e provare brividi a fianco di sconosciuti. Non ci sono prove, non c'è pubblico, nessuno che ti giudica. Solo centinaia di voci che diventano una cosa sola.',
+      'about.mission1':        'HardKoro nasce da un\'idea semplice: il canto polifonico non è un privilegio riservato a chi ha studiato musica. È per tutti — per chi canta sotto la doccia, per chi non ha mai aperto uno spartito.',
+      'about.mission2':        'Con repertori superpop, ogni appuntamento è un esperimento sociale: esporsi e provare brividi a fianco di sconosciuti. Non ci sono prove, non c\'è pubblico, nessuno che ti giudica. Solo centinaia di voci che diventano una cosa sola.',
       'about.science.title':   'Perché funziona',
       'about.science.intro':   'Lo dicono le neuroscienze. Il canto collettivo migliora il benessere, e aumenta la fiducia, in sè e negli altri.',
       'about.card1.title':     'Il cuore sincronizza',
