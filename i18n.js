@@ -40,8 +40,10 @@
       'index.s4.title':        'HardKoro in action',
       'index.s4.yt':           'Guarda tutti i video su YouTube ↗',
       'events.loading':        'Caricamento date…',
-      'events.empty':          'Nessuna data in programma al momento.<br>Torna presto.',
+      'events.empty':          'Ci stiamo scaldando la voce.<br>Nuove date in arrivo.',
       'events.error':          'Impossibile caricare le date. Riprova più tardi.',
+      'events.social.title':   'Per non perdere le prossime date',
+      'events.social.sub':     'Seguici su Instagram o sul nostro Canale WhatsApp.',
 
       /* ─────────── ABOUT ─────────── */
       'about.hero':            'Polifonia in formato pop-up.',
@@ -133,8 +135,10 @@
       'index.s4.title':        'HardKoro in action',
       'index.s4.yt':           'Watch all videos on YouTube ↗',
       'events.loading':        'Loading dates…',
-      'events.empty':          'No upcoming dates right now.<br>Check back soon.',
+      'events.empty':          'We\'re warming up.<br>New dates coming soon.',
       'events.error':          'Could not load dates. Please try again later.',
+      'events.social.title':   'Stay on top of upcoming dates',
+      'events.social.sub':     'Follow us on Instagram or our WhatsApp Channel.',
 
       /* ─────────── ABOUT ─────────── */
       'about.hero':            'We believe that singing together changes something — inside you and around you.',
