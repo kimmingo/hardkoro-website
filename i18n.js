@@ -25,7 +25,7 @@
       'nav.menu-label':  'Apri menu',
 
       /* ── FOOTER (shared) ── */
-      'footer.tagline':  'Nessuna prova.<br>Nessun pubblico.<br>Ti presenti. Il Maestro guida. Tu canti.',
+      'footer.tagline':  'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, è lì per cantare.<br>Ti presenti. Il Maestro ti guida. Tu canti.',
       'footer.upcoming': 'Prossime date',
       'footer.rights':   '© HardKoro — Tutti i diritti riservati.',
 
@@ -118,7 +118,7 @@
       'nav.menu-label':  'Open menu',
 
       /* ── FOOTER (shared) ── */
-      'footer.tagline':  'No rehearsal.<br>No audience.<br>You show up. The Maestro leads. You sing.',
+      'footer.tagline':  'No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.',
       'footer.upcoming': 'Upcoming dates',
       'footer.rights':   '© HardKoro — All rights reserved.',
 
