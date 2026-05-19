@@ -80,7 +80,7 @@
       'sb.card.bar.title':     'Barriere',
       'sb.card.bar.body':      'tra le persone — le gerarchie si dissolvono quando tutti cantano all\'unisono, CEO e stagista compresi',
       'sb.benefits.title':     'Cosa porta al tuo team',
-      'sb.b1.title':           'Connessione reale, non artificiale',
+      'sb.b1.title':           'Connessione reale',
       'sb.b1.body':            'In 60 minuti di canto insieme, il senso di appartenenza generato è paragonabile a mesi di frequentazione. Non si tratta di attività costruite a tavolino — si tratta di un meccanismo biologico che funziona su chiunque, indipendentemente dal ruolo o dall\'anzianità.',
       'sb.b2.title':           'Energia e presenza dopo l\'evento',
       'sb.b2.body':            'Il canto attiva il sistema delle endorfine e abbassa il cortisolo — il principale marcatore di stress. I partecipanti tornano al lavoro con un livello di energia e leggerezza misurabile. Non è motivazione da palco: è fisiologia.',
