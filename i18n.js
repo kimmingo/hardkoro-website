@@ -175,7 +175,7 @@
       'sb.card.bar.title':     'Barriers',
       'sb.card.bar.body':      'between people dissolve when everyone sings in unison — CEO and intern alike',
       'sb.benefits.title':     'What it brings to your team',
-      'sb.b1.title':           'Real connection, not artificial',
+      'sb.b1.title':           'Real connection',
       'sb.b1.body':            'In 60 minutes of singing together, the sense of belonging generated is comparable to months of acquaintance. This isn\'t a manufactured team exercise — it\'s a biological mechanism that works for anyone, regardless of role or seniority.',
       'sb.b2.title':           'Energy and presence after the event',
       'sb.b2.body':            'Singing activates the endorphin system and lowers cortisol — the primary stress marker. Participants return to work with a measurable lift in energy and lightness. This isn\'t stage motivation: it\'s physiology.',
