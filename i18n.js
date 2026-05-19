@@ -141,7 +141,7 @@
       'events.social.sub':     '',
 
       /* ─────────── ABOUT ─────────── */
-      'about.hero':            'We believe that singing together changes something — inside you and around you.',
+      'about.hero':            'Singing together, no strings attached.',
       'about.mission1':        'HardKoro was born from a simple idea: collective singing should not be a privilege reserved for those who studied music. It\'s for everyone — for the person who sings out of tune in the shower, for someone who\'s never read a score, for anyone who wants to share something real with strangers.',
       'about.mission2':        'Every session is a social experiment. A room, a guide, a song to learn together. No rehearsals, no audience, no judgement. Just the voice — yours, everyone else\'s, and the moment they become one.',
       'about.science.title':   'Why it works',
