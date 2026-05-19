@@ -510,10 +510,7 @@ nav {
   letter-spacing: 0.08em;
 }
 
-.row-sold-out .date-city,
-.row-sold-out .date-num {
-  opacity: 0.4;
-}
+
 
 .events-loading {
   padding: 2rem 0;
@@ -1172,7 +1169,7 @@ footer {
       const btnHref = href ? `href="${href}"` : '';
       const btnLabel = soldOut ? 'Sold out' : 'Tickets';
       return `
-        <div class="date-row${soldOut ? ' row-sold-out' : ''}">
+        <div class="date-row">
           <div class="col-date">
             <span class="date-day">${day}</span>
             <span class="date-num">${num}</span>
