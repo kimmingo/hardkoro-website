@@ -183,6 +183,40 @@ nav {
   position: relative;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(38,38,38,0.72) 0%,
+    rgba(38,38,38,0.58) 40%,
+    rgba(38,38,38,0.82) 100%
+  );
+}
+
+.hero-label,
+.hero-headline,
+.hero-sub {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-label {
   font-size: 0.7rem;
   font-weight: 500;
@@ -784,6 +818,10 @@ footer {
 
 <!-- ── HERO: PROVOCATION ── -->
 <section id="hero">
+  <div class="hero-bg">
+    <img src="SingBuilding.png" alt="">
+  </div>
+  <div class="hero-overlay"></div>
   <h1 class="hero-headline">
     <span data-i18n="sb.hero.headline">SingBuilding trasforma la tua organizzazione in un coro spontaneo e inarrestabile.</span>
   </h1>
