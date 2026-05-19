@@ -71,7 +71,7 @@
       'sb.hero.headline':      'Porta vibrazioni positive al lavoro con SingBuilding®',
       'sb.hero.sub':           'Nessuna prova, nessuna esperienza richiesta.',
       'sb.storia.headline':    'Il canto collettivo è il più antico strumento di coesione che l\'umanità conosca.',
-      'sb.storia.body':        'Da milioni di anni, gli esseri umani usano il canto per sincronizzarsi, creare fiducia e abbattere le gerarchie. Prima dei meeting, prima delle slide, prima del team building con la corda — c\'era la voce. La scienza moderna non ha fatto altro che confermare ciò che i nostri antenati sapevano istintivamente.',
+      'sb.storia.body':        'Da milioni di anni, gli esseri umani usano il canto per sintonizzarsi, creare fiducia e abbattere le gerarchie. Prima dei meeting, prima delle slide, prima del team building con la corda — c\'era la voce. La scienza moderna non ha fatto altro che confermare ciò che i nostri antenati sapevano istintivamente.',
       'sb.storia.quote':       '"Un mega-meccanismo per creare legami: perché cantare insieme ci fa bene."',
       'sb.card.end.title':     'Endorfine',
       'sb.card.end.body':      'rilasciate durante il canto collettivo, riducendo lo stress e migliorando l\'umore già dopo 60 minuti',
