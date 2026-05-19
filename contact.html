@@ -80,6 +80,28 @@ body {
   font-size: 16px;
   line-height: 1.6;
   min-height: 100vh;
+  position: relative;
+}
+
+/* Full-page background image */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('HardKoro_25-06_BG_Donizetti_Credits-Alvise_Tedesco_00001.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for legibility */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(20, 15, 10, 0.68);
 }
 
 /* ── NAV ── */
@@ -263,7 +285,7 @@ nav {
 
 /* ── FOOTER ── */
 footer {
-  background: var(--black);
+  background: transparent;
   border-top: 1px solid rgba(255,255,255,0.06);
   color: var(--white);
   padding: 4rem 1.5rem 2.5rem;
