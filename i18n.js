@@ -27,7 +27,32 @@
       /* ── FOOTER (shared) ── */
       'footer.tagline':  'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, è lì per cantare.<br>Ti presenti. Il Maestro ti guida. Tu canti.',
       'footer.upcoming': 'Prossime date',
+      'footer.privacy':  'Privacy policy',
       'footer.rights':   '© HardKoro — Tutti i diritti riservati.',
+
+      /* ── PRIVACY PAGE ── */
+      'privacy.back':    '← Torna alla home',
+      'privacy.title':   'Privacy policy',
+      'privacy.updated': 'Ultimo aggiornamento: maggio 2025',
+      'privacy.intro':   'HardKoro rispetta la tua privacy. Questa pagina spiega quali dati raccogliamo, perché e come puoi esercitare i tuoi diritti.',
+      'privacy.s1.title': '1. Titolare del trattamento',
+      'privacy.s1.body':  'Il titolare del trattamento è HardKoro (hello@hardkoro.com). Per qualsiasi domanda relativa alla privacy puoi scriverci a questo indirizzo.',
+      'privacy.s2.title': '2. Dati che raccogliamo',
+      'privacy.s2.body':  'Raccogliamo dati solo se hai acconsentito all\'uso dei cookie analitici. In quel caso, Google Analytics raccoglie informazioni anonime sull\'utilizzo del sito: pagine visitate, provenienza del traffico, tipo di dispositivo e durata della visita. Non raccogliamo nomi, indirizzi email o altri dati personali identificabili a meno che tu non ci contatti direttamente.',
+      'privacy.s3.title': '3. Finalità del trattamento',
+      'privacy.s3.body':  'Utilizziamo i dati analitici esclusivamente per migliorare il sito e capire come le persone lo trovano. Non vendiamo né cediamo dati a terzi per finalità commerciali.',
+      'privacy.s4.title': '4. Base giuridica',
+      'privacy.s4.body':  'Il trattamento dei dati analitici avviene sulla base del tuo consenso esplicito (art. 6, par. 1, lett. a del GDPR), espresso tramite il banner cookie. Puoi revocare il consenso in qualsiasi momento tramite il pulsante qui sotto.',
+      'privacy.s5.title': '5. Cookie',
+      'privacy.s5.body':  'Utilizziamo Google Analytics (cookie analitici di terze parti) solo se hai dato il consenso. Non utilizziamo cookie di profilazione o pubblicitari. La tua scelta viene memorizzata nel tuo browser e puoi cambiarla in qualsiasi momento tramite il pulsante qui sotto.',
+      'privacy.s6.title': '6. Conservazione dei dati',
+      'privacy.s6.body':  'I dati raccolti da Google Analytics vengono conservati per 14 mesi, dopodiché vengono eliminati automaticamente. I dati aggregati e anonimi possono essere conservati a tempo indeterminato.',
+      'privacy.s7.title': '7. I tuoi diritti',
+      'privacy.s7.body':  'Hai il diritto di accedere ai tuoi dati, richiederne la cancellazione, opporti al trattamento e presentare reclamo all\'Autorità Garante per la protezione dei dati personali (Garante Privacy). Per esercitare questi diritti scrivici a hello@hardkoro.com.',
+      'privacy.s8.title': '8. Modifiche a questa policy',
+      'privacy.s8.body':  'Potremmo aggiornare questa privacy policy di tanto in tanto. Le modifiche saranno pubblicate su questa pagina con la data di aggiornamento.',
+      'privacy.reset.label': 'Hai cambiato idea sui cookie?',
+      'privacy.reset.btn':   'Modifica le tue preferenze',
 
       /* ─────────── INDEX ─────────── */
       'index.hero.headline':   'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, è lì per cantare.',
@@ -104,6 +129,12 @@
       'sb.contact.sub':        'Ci piacerebbe progettare un\'esperienza SingBuilding per il tuo team.',
       'sb.contact.btn':        'Parliamoci →',
 
+      /* ── COOKIE BANNER ── */
+      'cookie.body':    'Utilizziamo cookie analitici (Google Analytics) per capire come le persone usano il sito. Nessun dato personale identificabile.',
+      'cookie.accept':  'Accetta',
+      'cookie.decline': 'Rifiuta',
+      'cookie.policy':  'Privacy policy',
+
       /* ─────────── CONTACT ─────────── */
       'contact.headline':      'Fatti sentire',
       'contact.opt1.title':    'Collaborazioni &amp; SingBuilding',
@@ -122,7 +153,32 @@
       /* ── FOOTER (shared) ── */
       'footer.tagline':  'No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.',
       'footer.upcoming': 'Upcoming dates',
+      'footer.privacy':  'Privacy policy',
       'footer.rights':   '© HardKoro — All rights reserved.',
+
+      /* ── PRIVACY PAGE ── */
+      'privacy.back':    '← Back to home',
+      'privacy.title':   'Privacy policy',
+      'privacy.updated': 'Last updated: May 2025',
+      'privacy.intro':   'HardKoro respects your privacy. This page explains what data we collect, why, and how you can exercise your rights.',
+      'privacy.s1.title': '1. Data controller',
+      'privacy.s1.body':  'The data controller is HardKoro (hello@hardkoro.com). For any privacy-related question you can write to us at this address.',
+      'privacy.s2.title': '2. Data we collect',
+      'privacy.s2.body':  'We only collect data if you have consented to the use of analytics cookies. In that case, Google Analytics collects anonymous information about site usage: pages visited, traffic source, device type, and visit duration. We do not collect names, email addresses, or other personally identifiable data unless you contact us directly.',
+      'privacy.s3.title': '3. Purpose of processing',
+      'privacy.s3.body':  'We use analytics data exclusively to improve the site and understand how people find it. We do not sell or share data with third parties for commercial purposes.',
+      'privacy.s4.title': '4. Legal basis',
+      'privacy.s4.body':  'Processing of analytics data is based on your explicit consent (Art. 6(1)(a) GDPR), given via the cookie banner. You can withdraw consent at any time using the button below.',
+      'privacy.s5.title': '5. Cookies',
+      'privacy.s5.body':  'We use Google Analytics (third-party analytics cookies) only if you have given consent. We do not use profiling or advertising cookies. Your choice is stored in your browser and can be changed at any time using the button below.',
+      'privacy.s6.title': '6. Data retention',
+      'privacy.s6.body':  'Data collected by Google Analytics is retained for 14 months, after which it is automatically deleted. Aggregated and anonymous data may be retained indefinitely.',
+      'privacy.s7.title': '7. Your rights',
+      'privacy.s7.body':  'You have the right to access your data, request its deletion, object to processing, and lodge a complaint with the Italian Data Protection Authority (Garante Privacy). To exercise these rights, write to us at hello@hardkoro.com.',
+      'privacy.s8.title': '8. Changes to this policy',
+      'privacy.s8.body':  'We may update this privacy policy from time to time. Changes will be published on this page with the updated date.',
+      'privacy.reset.label': 'Changed your mind about cookies?',
+      'privacy.reset.btn':   'Update your preferences',
 
       /* ─────────── INDEX ─────────── */
       'index.hero.headline':   'No rehearsal.<br>No audience.<br>Everyone here is here to sing.',
@@ -198,6 +254,12 @@
       'sb.contact.headline':   'Give us the note.',
       'sb.contact.sub':        'We\'d love to design a SingBuilding experience for your team.',
       'sb.contact.btn':        'Let\'s talk →',
+
+      /* ── COOKIE BANNER ── */
+      'cookie.body':    'We use analytics cookies (Google Analytics) to understand how people use the site. No personally identifiable data.',
+      'cookie.accept':  'Accept',
+      'cookie.decline': 'Decline',
+      'cookie.policy':  'Privacy policy',
 
       /* ─────────── CONTACT ─────────── */
       'contact.headline':      'Make yourself heard',

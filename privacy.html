@@ -313,6 +313,30 @@ footer {
   letter-spacing: 0.05em;
 }
 
+.privacy-reset-section {
+  background: rgba(0,0,255,0.04);
+  border-radius: 4px;
+  padding: 1.5rem !important;
+  margin-top: 1rem;
+}
+
+.btn-reset-consent {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.6rem 1.25rem;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-reset-consent:hover { background: var(--blue-dk); }
+
 /* hide nav-right toggle on mobile */
 .nav-right .lang-toggle { display: none; }
 
@@ -459,6 +483,12 @@ footer {
     <p class="privacy-section-body" data-i18n="privacy.s8.body">Potremmo aggiornare questa privacy policy di tanto in tanto. Le modifiche saranno pubblicate su questa pagina con la data di aggiornamento.</p>
   </div>
 
+  <div class="privacy-section privacy-reset-section">
+    <h2 class="privacy-section-title" data-i18n="privacy.reset.label">Hai cambiato idea sui cookie?</h2>
+    <p class="privacy-section-body" style="margin-bottom:1rem;" data-i18n="privacy.s5.body">Utilizziamo Google Analytics (cookie analitici di terze parti) solo se hai dato il consenso. La tua scelta viene memorizzata nel tuo browser e puoi cambiarla in qualsiasi momento tramite il pulsante qui sotto.</p>
+    <button class="btn-reset-consent" onclick="window.HK_CONSENT && window.HK_CONSENT.reset()" data-i18n="privacy.reset.btn">Modifica le tue preferenze</button>
+  </div>
+
 </main>
 
 
@@ -529,6 +559,7 @@ footer {
     });
   });
 </script>
+<script src="cookie-consent.js"></script>
 <script src="i18n.js"></script>
 </body>
 </html>
