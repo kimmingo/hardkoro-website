@@ -19,13 +19,13 @@
   // ── STRINGS (inline fallback — i18n.js overrides via data-i18n) ─
   const COPY = {
     it: {
-      body:    'Utilizziamo cookie analitici (Google Analytics) per capire come le persone usano il sito. Nessun dato personale identificabile.',
+      body:    'Usiamo cookie anonimi per capire come le persone usano il sito. Niente di personale, promesso.',
       accept:  'Accetta',
       decline: 'Rifiuta',
       policy:  'Privacy policy',
     },
     en: {
-      body:    'We use analytics cookies (Google Analytics) to understand how people use the site. No personally identifiable data.',
+      body:    'We use anonymous cookies to understand how people use the site. Nothing personal, promise.',
       accept:  'Accept',
       decline: 'Decline',
       policy:  'Privacy policy',

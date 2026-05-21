@@ -1091,17 +1091,22 @@ footer {
 
   const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRNOojzyRtEtSCdqfOIHyZSvTOVijPibcDhAL_dVhh67mHqGDGNgfJOyFM99WNmd9gEShidVJDwdxZP/pub?gid=0&single=true&output=csv';
 
-  // Italian day/month labels
-  const DAYS_IT  = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+  // Day/month labels — Italian and English
+  const DAYS_IT   = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
   const MONTHS_IT = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
+  const DAYS_EN   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MONTHS_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
   function formatDate(isoString) {
     // Parse as local date to avoid UTC-offset surprises
     const [year, month, day] = isoString.trim().split('-').map(Number);
-    const d = new Date(year, month - 1, day);
+    const d    = new Date(year, month - 1, day);
+    const lang = (window.HK_LANG && window.HK_LANG.get()) || 'it';
+    const days   = lang === 'en' ? DAYS_EN   : DAYS_IT;
+    const months = lang === 'en' ? MONTHS_EN : MONTHS_IT;
     return {
-      day:   DAYS_IT[d.getDay()],
-      num:   `${day} ${MONTHS_IT[month - 1]}`
+      day: days[d.getDay()],
+      num: `${day} ${months[month - 1]}`
     };
   }
 
@@ -1131,6 +1136,7 @@ footer {
   }
 
   function renderEvents(events) {
+    window._hkEvents = events; // cache for language re-renders
     const container = document.getElementById('events-body');
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -1220,6 +1226,25 @@ footer {
   }
 
   loadEvents();
+
+  // Re-render dates when language is toggled
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.lang-toggle button[data-lang]');
+    if (!btn) return;
+    // Small delay so HK_LANG.get() has been updated by i18n.js first
+    setTimeout(() => {
+      const container = document.getElementById('events-body');
+      if (!container) return;
+      const hasRows = container.querySelector('.date-row');
+      if (hasRows) {
+        if (window._hkEvents) {
+          renderEvents(window._hkEvents);
+        } else {
+          loadEvents();
+        }
+      }
+    }, 50);
+  });
 </script>
 <script src="cookie-consent.js"></script>
 <script src="i18n.js"></script>
