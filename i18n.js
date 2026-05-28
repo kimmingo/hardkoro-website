@@ -23,7 +23,7 @@
       /* ── NAV ── */
       'nav.upcoming':    'Prossime date',
       'nav.menu-label':  'Apri menu',
-      'nav.singbuilding': 'Per le Aziende',
+      'nav.singbuilding': 'Per le aziende',
 
       /* ── FOOTER (shared) ── */
       'footer.tagline':  'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, è lì per cantare.<br>Ti presenti. Il Maestro ti guida. Tu canti.',
