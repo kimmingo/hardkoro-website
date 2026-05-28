@@ -23,6 +23,7 @@
       /* ── NAV ── */
       'nav.upcoming':    'Prossime date',
       'nav.menu-label':  'Apri menu',
+      'nav.singbuilding': 'Per le Aziende',
 
       /* ── FOOTER (shared) ── */
       'footer.tagline':  'Nessuna prova.<br>Nessun pubblico.<br>Chi c\'è, è lì per cantare.<br>Ti presenti. Il Maestro ti guida. Tu canti.',
@@ -149,6 +150,7 @@
       /* ── NAV ── */
       'nav.upcoming':    'Upcoming dates',
       'nav.menu-label':  'Open menu',
+      'nav.singbuilding': 'For Businesses',
 
       /* ── FOOTER (shared) ── */
       'footer.tagline':  'No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.',
