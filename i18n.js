@@ -150,7 +150,7 @@
       /* ── NAV ── */
       'nav.upcoming':    'Upcoming dates',
       'nav.menu-label':  'Open menu',
-      'nav.singbuilding': 'For Businesses',
+      'nav.singbuilding': 'For businesses',
 
       /* ── FOOTER (shared) ── */
       'footer.tagline':  'No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.',
