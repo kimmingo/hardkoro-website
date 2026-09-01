@@ -49,7 +49,12 @@
     function gtag(){ window.dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
-    gtag('config', GA_ID, { anonymize_ip: true });
+    gtag('config', GA_ID);
+
+    // Language as a user property, so every GA4 report can be split by
+    // IT vs EN visitors without extra event params. Kept in sync on
+    // every language toggle by analytics-events.js.
+    gtag('set', 'user_properties', { ui_language: getLang() });
   }
 
   // ── BUILD BANNER ───────────────────────────────────────────────

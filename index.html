@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,11 +57,11 @@
 :root {
   --black:   #262626;
   --white:   #ffffff;
-  
+
   --blue:    #0000ff;
   --blue-dk: #0000cc;
   --mid:     #6b6b6b;
-  
+
   --sans:    'DM Sans', sans-serif;
 }
 
@@ -309,7 +309,7 @@ nav {
   margin-bottom: 0.5em;
 }
 .hero-headline em {
-  
+
   font-weight: 400;
   color: rgba(255,255,255,0.85);
 }
@@ -350,7 +350,7 @@ nav {
 .section-body {
   font-family: var(--sans);
   font-size: clamp(1.05rem, 3vw, 1.35rem);
-  
+
   line-height: 1.7;
   color: var(--black);
   max-width: 680px;
@@ -829,11 +829,11 @@ footer {
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a></li>
+      <li><a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
+    <a href="#date" class="nav-cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="nav_desktop"><span data-i18n="nav.upcoming">Upcoming dates</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -842,9 +842,9 @@ footer {
 <!-- Mobile drawer -->
 <div class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="about.html">About</a>
-  <a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a>
+  <a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a>
   <a href="contact.html">Contact</a>
-  <a href="#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+  <a href="#date" class="nav-cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="nav_mobile"><span data-i18n="nav.upcoming">Upcoming dates</span></a>
 </div>
 
 
@@ -857,45 +857,45 @@ footer {
 
   <div class="hero-content">
     <img src="HK_Blue_V.svg" alt="HardKoro" class="hero-logo-v" id="heroLogoV">
-    <h1 class="hero-headline" data-i18n-html="index.hero.headline">Ti presenti. Il Maestro guida. Tu canti.</h1>
-    <a href="#date" class="btn-primary" data-i18n="index.hero.cta">Prossime date →</a>
+    <h1 class="hero-headline" data-i18n-html="index.hero.headline">No rehearsal.<br>No audience.<br>Everyone here is here to sing.</h1>
+    <a href="#date" class="btn-primary" data-i18n="index.hero.cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="hero">Upcoming dates →</a>
   </div>
 </section>
 
 
 <!-- ── SECTION 2: COME FUNZIONA ── -->
 <section id="come-funziona">
-  <h2 class="section-title" data-i18n-html="index.s2.title">Nessuna prova.<br>Nessun pubblico.<br>Chi c'è, viene per cantare.</h2>
+  <h2 class="section-title" data-i18n-html="index.s2.title">No rehearsal.<br>No audience.<br>Everyone here is here to sing.</h2>
 
-  <p class="section-body" data-i18n="index.s2.body">HardKoro trasforma una stanza piena di sconosciuti in un coro spontaneo. Nessuna selezione, nessun impegno fisso. Insegniamo ogni canzone da zero, quindi non serve nessuna esperienza. Portati così come sei (magari con un amico, o cinque).</p>
+  <p class="section-body" data-i18n="index.s2.body">HardKoro turns a room full of strangers into a spontaneous choir. No auditions, no fixed commitment. We teach every song from scratch — no experience needed. Come as you are (maybe with a friend, or five).</p>
 </section>
 
 
 <!-- ── SECTION 3: PROSSIME DATE ── -->
 <section id="date">
-  <h2 class="section-title" data-i18n="index.s3.title">Vieni a cantare</h2>
+  <h2 class="section-title" data-i18n="index.s3.title">Come and sing</h2>
 
   <div class="dates-list">
     <div class="dates-header">
-      <span class="col-date" data-i18n="index.s3.col-date">Data</span>
-      <span class="col-place" data-i18n-html="index.s3.col-place">Città &amp; Venue</span>
+      <span class="col-date" data-i18n="index.s3.col-date">Date</span>
+      <span class="col-place" data-i18n-html="index.s3.col-place">City &amp; Venue</span>
       <span class="col-btn"></span>
     </div>
     <!-- Rows are injected here by loadEvents() -->
     <div id="events-body">
       <div class="events-loading">
-        <span>Caricamento date…</span>
+        <span data-i18n="events.loading">Loading dates…</span>
       </div>
     </div>
   </div>
 
   <!-- ── SOCIAL FOLLOW (always visible) ── -->
   <div class="events-social">
-    <div class="events-social-title" data-i18n="events.social.title">Seguici. Ti diciamo noi quando si canta.</div>
+    <div class="events-social-title" data-i18n="events.social.title">Follow us. We'll let you know when it's time to sing.</div>
     <div class="events-social-icons">
 
       <!-- Instagram -->
-      <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-hk-track="social_click" data-hk-platform="instagram" data-hk-location="date_section">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
@@ -913,7 +913,7 @@ footer {
       </a>
 
       <!-- WhatsApp -->
-      <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Channel">
+      <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Channel" data-hk-track="social_click" data-hk-platform="whatsapp" data-hk-location="date_section">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="11" fill="#25D366"/>
           <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z" fill="white"/>
@@ -921,7 +921,7 @@ footer {
       </a>
 
       <!-- YouTube -->
-      <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-hk-track="social_click" data-hk-platform="youtube" data-hk-location="date_section">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="5" width="22" height="14" rx="4" fill="#FF0000"/>
           <polygon points="10,8.5 10,15.5 16,12" fill="white"/>
@@ -941,26 +941,26 @@ footer {
   <div class="video-grid">
     <div class="video-card">
       <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/BJE9CsD1DYA" title="HardKoro video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/BJE9CsD1DYA?enablejsapi=1&origin=https://hardkoro.com" title="HardKoro video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
     <div class="video-card">
       <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/Q1qQIvkWUaQ" title="HardKoro video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Q1qQIvkWUaQ?enablejsapi=1&origin=https://hardkoro.com" title="HardKoro video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
     <div class="video-card">
       <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/6GJauXb1yjo" title="HardKoro video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/6GJauXb1yjo?enablejsapi=1&origin=https://hardkoro.com" title="HardKoro video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <div class="video-more">
-    <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener">
-      <span data-i18n="index.s4.yt">Guarda tutti i video su YouTube ↗</span>
+    <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener" data-hk-track="social_click" data-hk-platform="youtube" data-hk-location="video_more">
+      <span data-i18n="index.s4.yt">Watch all videos on YouTube ↗</span>
     </a>
   </div>
 </section>
@@ -972,21 +972,21 @@ footer {
 
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line" data-i18n-html="footer.tagline">Nessuna prova.<br>Nessun pubblico.<br>Ti presenti. Il Maestro guida. Tu canti.</p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.</p>
     </div>
 
     <div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a></li>
+        <li><a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
+        <li><a href="#date" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="footer"><span data-i18n="footer.upcoming">Upcoming dates</span></a></li>
       </ul>
     </div>
 
     <div>
       <div class="footer-social">
-        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="instagram" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="2" y="2" width="20" height="20" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -994,13 +994,13 @@ footer {
           </svg>
           Instagram
         </a>
-        <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer">
+        <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="whatsapp" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.08-1.35A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/>
           </svg>
           WhatsApp Channel
         </a>
-        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="youtube" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
           </svg>
@@ -1012,7 +1012,7 @@ footer {
   </div>
 
   <div class="footer-bottom">
-    <span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span>
+    <span data-i18n="footer.rights">© HardKoro — All rights reserved.</span>
   </div>
 </footer>
 
@@ -1167,6 +1167,11 @@ footer {
       const btnTag  = href ? 'a' : 'span';
       const btnHref = href ? `href="${href}"` : '';
       const btnLabel = soldOut ? 'Sold out' : 'Tickets';
+      // GA4 event tracking: real ticket clicks vs. sold-out rows.
+      // (sold-out impressions are counted separately below, once per render)
+      const trackAttrs = href
+        ? `data-hk-track="ticket_click" data-hk-city="${e.city}" data-hk-venue="${e.venue}" data-hk-date="${e.date}"`
+        : '';
       return `
         <div class="date-row">
           <div class="col-date">
@@ -1178,10 +1183,20 @@ footer {
             <span class="date-venue">${e.venue}</span>
           </div>
           <div class="col-btn">
-            <${btnTag} ${btnHref} class="${btnClass}" ${target}>${btnLabel}</${btnTag}>
+            <${btnTag} ${btnHref} class="${btnClass}" ${target} ${trackAttrs}>${btnLabel}</${btnTag}>
           </div>
         </div>`;
     }).join('');
+
+    // GA4: how often visitors see a sold-out show (demand signal) —
+    // fired once per render, not per row, to avoid noisy event volume.
+    const soldOutRows = upcoming.filter(e => e.status === 'sold_out');
+    if (soldOutRows.length > 0 && typeof window.hkTrackEvent === 'function') {
+      window.hkTrackEvent('sold_out_impression', {
+        count: soldOutRows.length,
+        cities: soldOutRows.map(e => e.city).join(', ')
+      });
+    }
   }
 
   async function loadEvents() {
@@ -1248,5 +1263,7 @@ footer {
 </script>
 <script src="cookie-consent.js"></script>
 <script src="i18n.js"></script>
+<script src="analytics-events.js"></script>
+
 </body>
 </html>

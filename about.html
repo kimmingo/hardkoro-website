@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,11 +57,11 @@
 :root {
   --black:   #262626;
   --white:   #ffffff;
-  
+
   --blue:    #0000ff;
   --blue-dk: #0000cc;
   --mid:     #6b6b6b;
-  
+
   --sans:    'DM Sans', sans-serif;
 }
 
@@ -266,7 +266,7 @@ nav {
 }
 
 .page-header-headline em {
-  
+
   font-weight: 400;
   color: rgba(255,255,255,0.7);
 }
@@ -281,7 +281,7 @@ nav {
 .mission-body {
   font-family: var(--sans);
   font-size: clamp(1.15rem, 3.5vw, 1.5rem);
-  
+
   line-height: 1.75;
   color: var(--black);
   max-width: 700px;
@@ -299,8 +299,6 @@ nav {
 }
 
 
-/* Avatar initials circle */
-/* When you have a photo, swap .member-avatar with <img class="member-photo"> */
 .member-photo {
   width: 48px;
   height: 48px;
@@ -320,7 +318,7 @@ nav {
 #scienza .scienza-intro {
   font-family: var(--sans);
   font-size: clamp(1.05rem, 3vw, 1.3rem);
-  
+
   line-height: 1.75;
   color: rgba(255,255,255,0.8);
   max-width: 620px;
@@ -349,7 +347,6 @@ nav {
   padding-top: 0.15em;
   font-size: 1.4rem;
   line-height: 1;
-  /* Replace with SVG icons when available */
 }
 
 .science-title {
@@ -520,7 +517,6 @@ footer {
 }
 
 /* ── LANG TOGGLE ── */
-/* Nav-right instance: hidden mobile-first (override in 640px query above) */
 .lang-toggle {
   display: flex;
   align-items: center;
@@ -549,7 +545,6 @@ footer {
   line-height: 1;
   pointer-events: none;
 }
-/* Mobile drawer toggle — full width row */
 .nav-mobile-menu .lang-toggle {
   margin-left: 0;
   padding: 0.9rem 0;
@@ -579,11 +574,11 @@ footer {
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="about.html" aria-current="page">About</a></li>
-      <li><a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a></li>
+      <li><a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
+    <a href="index.html#date" class="nav-cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="nav_desktop"><span data-i18n="nav.upcoming">Upcoming dates</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -592,9 +587,9 @@ footer {
 <!-- Mobile drawer -->
 <div class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="about.html">About</a>
-  <a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a>
+  <a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a>
   <a href="contact.html">Contact</a>
-  <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+  <a href="index.html#date" class="nav-cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="nav_mobile"><span data-i18n="nav.upcoming">Upcoming dates</span></a>
 </div>
 
 
@@ -605,7 +600,7 @@ footer {
   </div>
   <div class="header-overlay"></div>
   <div class="header-content">
-    <h1 class="page-header-headline" data-i18n="about.hero">Crediamo che cantare insieme cambi qualcosa — dentro e intorno a te.</h1>
+    <h1 class="page-header-headline" data-i18n="about.hero">Singing together, no strings attached.</h1>
   </div>
 </section>
 
@@ -613,10 +608,10 @@ footer {
 <!-- ── SECTION: MISSION ── -->
 <section id="mission">
   <p class="mission-body">
-    <span data-i18n="about.mission1">HardKoro nasce da un'idea semplice: il canto collettivo non dovrebbe essere un privilegio di chi ha studiato musica. È per tutti — per chi canta stonato sotto la doccia, per chi non ha mai aperto uno spartito, per chi ha voglia di condividere qualcosa di vero con degli sconosciuti.</span>
+    <span data-i18n="about.mission1">HardKoro was born from a simple idea: collective singing should not be a privilege reserved for those who studied music. It's for everyone — for the person who sings out of tune in the shower, for someone who's never read a score, for anyone who wants to share something real with strangers.</span>
   </p>
   <p class="mission-body" style="margin-top: 1.5em;">
-    <span data-i18n="about.mission2">Ogni appuntamento è un esperimento sociale. Una stanza, una guida, una canzone da imparare insieme. Non ci sono prove, non c'è pubblico, non c'è giudizio. C'è solo la voce — la tua, quella di tutti gli altri, e il momento in cui diventano una cosa sola.</span>
+    <span data-i18n="about.mission2">Every session is a social experiment. A room, a guide, a song to learn together. No rehearsals, no audience, no judgement. Just the voice — yours, everyone else's, and the moment they become one.</span>
   </p>
 </section>
 
@@ -624,10 +619,10 @@ footer {
 
 <!-- ── SECTION: LA SCIENZA ── -->
 <section id="scienza">
-  <h2 class="section-title" data-i18n="about.science.title">Perché funziona</h2>
+  <h2 class="section-title" data-i18n="about.science.title">Why it works</h2>
 
   <p class="scienza-intro">
-    <span data-i18n="about.science.intro">Non lo diciamo solo perché lo sentono i partecipanti — anche la ricerca lo dice. Cantare insieme con gli altri non è solo bello: è profondamente utile.</span>
+    <span data-i18n="about.science.intro">We don't just say this because participants feel it — research confirms it too. Singing together isn't just enjoyable: it's deeply useful.</span>
   </p>
 
   <div class="science-grid">
@@ -635,9 +630,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">♡</div>
       <div>
-        <div class="science-title" data-i18n="about.card1.title">Il cuore sincronizza</div>
+        <div class="science-title" data-i18n="about.card1.title">Hearts synchronise</div>
         <p class="science-body">
-          <span data-i18n="about.card1.body">Quando canti in gruppo, la frequenza cardiaca di chi canta tende ad allinearsi. Non è metafora — è fisiologia. Il ritmo condiviso crea coerenza biologica tra le persone presenti.</span>
+          <span data-i18n="about.card1.body">When you sing in a group, heart rates tend to align. This isn't metaphor — it's physiology. Shared rhythm creates biological coherence between people.</span>
         </p>
         <span class="science-cite">Vickhoff et al., 2013 — Frontiers in Psychology</span>
       </div>
@@ -646,9 +641,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">◎</div>
       <div>
-        <div class="science-title" data-i18n="about.card2.title">Le endorfine salgono</div>
+        <div class="science-title" data-i18n="about.card2.title">Endorphins rise</div>
         <p class="science-body">
-          <span data-i18n="about.card2.body">Il canto attiva il sistema delle endorfine — gli stessi neurotrasmettitori che entrano in gioco durante l'esercizio fisico. Il gruppo amplifica l'effetto: cantare insieme rilascia più endorfine che cantare da soli.</span>
+          <span data-i18n="about.card2.body">Singing activates the endorphin system — the same neurotransmitters triggered by physical exercise. The group amplifies the effect: singing together releases more endorphins than singing alone.</span>
         </p>
         <span class="science-cite">Dunbar et al., 2012 — Evolution and Human Behavior</span>
       </div>
@@ -657,9 +652,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">◈</div>
       <div>
-        <div class="science-title" data-i18n="about.card3.title">La soglia sociale si abbassa</div>
+        <div class="science-title" data-i18n="about.card3.title">Social barriers lower</div>
         <p class="science-body">
-          <span data-i18n="about.card3.body">Bastano 60 minuti di canto collettivo con estranei per generare un senso di connessione e appartenenza paragonabile a mesi di frequentazione. È uno dei modi più rapidi che conosciamo per creare legame sociale.</span>
+          <span data-i18n="about.card3.body">Just 60 minutes of collective singing with strangers generates a sense of connection and belonging comparable to months of acquaintance. It's one of the fastest ways we know to create social bonds.</span>
         </p>
         <span class="science-cite">Pearce et al., 2015 — Royal Society Open Science</span>
       </div>
@@ -668,9 +663,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">↓</div>
       <div>
-        <div class="science-title" data-i18n="about.card4.title">Il cortisolo scende</div>
+        <div class="science-title" data-i18n="about.card4.title">Cortisol drops</div>
         <p class="science-body">
-          <span data-i18n="about.card4.body">Cantare riduce i livelli di cortisolo — il principale marcatore biologico dello stress. L'effetto è misurabile già dopo una singola sessione, indipendentemente dall'esperienza musicale del partecipante.</span>
+          <span data-i18n="about.card4.body">Singing reduces cortisol levels — the primary biological marker of stress. The effect is measurable after a single session, regardless of the participant's musical background.</span>
         </p>
         <span class="science-cite">Keeler et al., 2015 — Frontiers in Psychology</span>
       </div>
@@ -679,9 +674,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">∿</div>
       <div>
-        <div class="science-title" data-i18n="about.card5.title">Il respiro si regola</div>
+        <div class="science-title" data-i18n="about.card5.title">Breathing regulates</div>
         <p class="science-body">
-          <span data-i18n="about.card5.body">Cantare impone un ritmo respiratorio più lento e profondo. In gruppo, tutti respirano insieme — e questo ha un effetto diretto sul sistema nervoso autonomo, portando a uno stato di calma attiva.</span>
+          <span data-i18n="about.card5.body">Singing imposes a slower, deeper breathing rhythm. In a group, everyone breathes together — which has a direct effect on the autonomic nervous system, producing a state of active calm.</span>
         </p>
         <span class="science-cite">Vickhoff et al., 2013 — Frontiers in Psychology</span>
       </div>
@@ -690,9 +685,9 @@ footer {
     <div class="science-card">
       <div class="science-icon">∞</div>
       <div>
-        <div class="science-title" data-i18n="about.card6.title">La memoria a lungo termine si attiva</div>
+        <div class="science-title" data-i18n="about.card6.title">Long-term memory activates</div>
         <p class="science-body">
-          <span data-i18n="about.card6.body">Il cervello elabora la musica in modo diverso dal linguaggio, coinvolgendo aree legate alla memoria emotiva e procedurale. Imparare una canzone insieme è un'esperienza che resta.</span>
+          <span data-i18n="about.card6.body">The brain processes music differently from language, engaging areas linked to emotional and procedural memory. Learning a song together is an experience that stays with you.</span>
         </p>
         <span class="science-cite">Thaut, 2005 — Rhythm, Music and the Brain</span>
       </div>
@@ -704,9 +699,9 @@ footer {
 
 <!-- ── CTA ── -->
 <section id="cta">
-  <h2 class="cta-headline" data-i18n="about.cta.headline">Adesso tocca a te.</h2>
-  <p class="cta-sub" data-i18n="about.cta.sub">Nessuna esperienza richiesta. Solo voglia di esserci.</p>
-  <a href="index.html#date" class="btn-primary" data-i18n="about.cta.btn">Vedi le prossime date →</a>
+  <h2 class="cta-headline" data-i18n="about.cta.headline">Now it's your turn.</h2>
+  <p class="cta-sub" data-i18n="about.cta.sub">No experience required. Just show up.</p>
+  <a href="index.html#date" class="btn-primary" data-i18n="about.cta.btn" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="about_cta">See upcoming dates →</a>
 </section>
 
 
@@ -716,21 +711,21 @@ footer {
 
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line" data-i18n-html="footer.tagline">Nessuna prova.<br>Nessun pubblico.<br>Ti presenti. Il Maestro guida. Tu canti.</p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.</p>
     </div>
 
     <div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a></li>
+        <li><a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
+        <li><a href="index.html#date" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="footer"><span data-i18n="footer.upcoming">Upcoming dates</span></a></li>
       </ul>
     </div>
 
     <div>
       <div class="footer-social">
-        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="instagram" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="2" y="2" width="20" height="20" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -738,13 +733,13 @@ footer {
           </svg>
           Instagram
         </a>
-        <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer">
+        <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="whatsapp" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.08-1.35A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/>
           </svg>
           WhatsApp Channel
         </a>
-        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="youtube" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
           </svg>
@@ -756,7 +751,7 @@ footer {
   </div>
 
   <div class="footer-bottom">
-    <span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span>
+    <span data-i18n="footer.rights">© HardKoro — All rights reserved.</span>
   </div>
 </footer>
 
@@ -783,5 +778,7 @@ footer {
 </script>
 <script src="cookie-consent.js"></script>
 <script src="i18n.js"></script>
+<script src="analytics-events.js"></script>
+
 </body>
 </html>

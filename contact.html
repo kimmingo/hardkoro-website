@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,11 +57,11 @@
 :root {
   --black:   #262626;
   --white:   #ffffff;
-  
+
   --blue:    #0000ff;
   --blue-dk: #0000cc;
   --mid:     #6b6b6b;
-  
+
   --sans:    'DM Sans', sans-serif;
 }
 
@@ -190,7 +190,7 @@ nav {
 }
 
 .page-headline em {
-  
+
   font-weight: 400;
   color: rgba(255,255,255,0.55);
 }
@@ -337,7 +337,6 @@ footer {
 }
 
 /* ── LANG TOGGLE ── */
-/* Nav-right instance: hidden mobile-first (override in 640px query above) */
 .lang-toggle {
   display: flex;
   align-items: center;
@@ -366,7 +365,6 @@ footer {
   line-height: 1;
   pointer-events: none;
 }
-/* Mobile drawer toggle — full width row */
 .nav-mobile-menu .lang-toggle {
   margin-left: 0;
   padding: 0.9rem 0;
@@ -395,11 +393,11 @@ footer {
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a></li>
+      <li><a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a></li>
       <li><a href="contact.html" aria-current="page">Contact</a></li>
     </ul>
-    <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Apri menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
+    <a href="index.html#date" class="nav-cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="nav_desktop"><span data-i18n="nav.upcoming">Upcoming dates</span></a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" data-i18n-attr="aria-label:nav.menu-label" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -407,36 +405,40 @@ footer {
 
 <div class="nav-mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="about.html">About</a>
-  <a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a>
+  <a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a>
   <a href="contact.html">Contact</a>
-  <a href="index.html#date" class="nav-cta"><span data-i18n="nav.upcoming">Prossime date</span></a>
+  <a href="index.html#date" class="nav-cta" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="nav_mobile"><span data-i18n="nav.upcoming">Upcoming dates</span></a>
 </div>
 
 
 <!-- ── PAGE ── -->
 <main id="page">
 
-  <h1 class="page-headline" data-i18n="contact.headline">Fatti sentire</h1>
+  <h1 class="page-headline" data-i18n="contact.headline">Make yourself heard</h1>
   <div class="contact-options">
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
-       target="_blank" rel="noopener noreferrer"
-       class="contact-option">
+    <!--
+      NOTE: both options currently point to the same Google Form
+      (see form URL below) — worth checking whether that's intentional.
+      If the form doesn't ask "why are you contacting us", collaboration
+      and media leads land in the same place with no way to tell them
+      apart. The data-hk-inquiry-type tags below let GA4 tell you how many
+      clicks each option gets even though the destination URL is identical.
+    -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform" target="_blank" rel="noopener noreferrer" class="contact-option" data-hk-track="lead_form_click" data-hk-source-page="contact" data-hk-inquiry-type="collaboration">
       <div class="option-text">
-        <div class="option-title" data-i18n-html="contact.opt1.title">Collaborazioni &amp; SingBuilding</div>
-        <div class="option-sub" data-i18n="contact.opt1.sub">Vuoi portare HardKoro al tuo team o collaborare con noi?</div>
+        <div class="option-title" data-i18n-html="contact.opt1.title">Collaborations &amp; SingBuilding</div>
+        <div class="option-sub" data-i18n="contact.opt1.sub">Want to bring HardKoro to your team or collaborate with us?</div>
       </div>
-      <span class="option-btn" data-i18n="contact.opt1.btn">Parliamoci →</span>
+      <span class="option-btn" data-i18n="contact.opt1.btn">Let's talk →</span>
     </a>
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform"
-       target="_blank" rel="noopener noreferrer"
-       class="contact-option">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLnfWC0M9U04eMdEx67R46Bj3_vnymPDAINo1PemLH0jSX4Q/viewform" target="_blank" rel="noopener noreferrer" class="contact-option" data-hk-track="lead_form_click" data-hk-source-page="contact" data-hk-inquiry-type="media">
       <div class="option-text">
-        <div class="option-title" data-i18n="contact.opt2.title">Richieste media</div>
-        <div class="option-sub" data-i18n="contact.opt2.sub">Press kit, interviste, materiali fotografici.</div>
+        <div class="option-title" data-i18n="contact.opt2.title">Media enquiries</div>
+        <div class="option-sub" data-i18n="contact.opt2.sub">Press kit, interviews, photo materials.</div>
       </div>
-      <span class="option-btn" data-i18n="contact.opt2.btn">Contattaci →</span>
+      <span class="option-btn" data-i18n="contact.opt2.btn">Get in touch →</span>
     </a>
 
   </div>
@@ -450,19 +452,19 @@ footer {
   <div class="footer-grid">
     <div>
       <div class="footer-brand-name">HardKoro</div>
-      <p class="footer-brand-line" data-i18n-html="footer.tagline">Nessuna prova.<br>Nessun pubblico.<br>Ti presenti. Il Maestro guida. Tu canti.</p>
+      <p class="footer-brand-line" data-i18n-html="footer.tagline">No rehearsal.<br>No audience.<br>Everyone here is here to sing.<br>You show up. The Maestro leads. You sing.</p>
     </div>
     <div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="singbuilding.html" data-i18n="nav.singbuilding">Per le aziende</a></li>
+        <li><a href="singbuilding.html" data-i18n="nav.singbuilding">For businesses</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#date"><span data-i18n="footer.upcoming">Prossime date</span></a></li>
+        <li><a href="index.html#date" data-hk-track="cta_click" data-hk-label="upcoming_dates" data-hk-location="footer"><span data-i18n="footer.upcoming">Upcoming dates</span></a></li>
       </ul>
     </div>
     <div>
       <div class="footer-social">
-        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/hardkoro_?igsh=MWRheGNia2l3YzAxbw==" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="instagram" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="2" y="2" width="20" height="20" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -470,13 +472,13 @@ footer {
           </svg>
           Instagram
         </a>
-        <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer">
+        <a href="https://whatsapp.com/channel/0029Vb5nnWvFHWpv52Ug8k19" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="whatsapp" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.08-1.35A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.3 0-.1-.2-.2-.5-.3z"/>
           </svg>
           WhatsApp Channel
         </a>
-        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/@hardcoro_" target="_blank" rel="noopener noreferrer" data-hk-track="social_click" data-hk-platform="youtube" data-hk-location="footer">
           <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
           </svg>
@@ -485,7 +487,7 @@ footer {
       </div>
     </div>
   </div>
-  <div class="footer-bottom"><span data-i18n="footer.rights">© HardKoro — Tutti i diritti riservati.</span></div>
+  <div class="footer-bottom"><span data-i18n="footer.rights">© HardKoro — All rights reserved.</span></div>
 </footer>
 
 
@@ -509,5 +511,7 @@ footer {
 </script>
 <script src="cookie-consent.js"></script>
 <script src="i18n.js"></script>
+<script src="analytics-events.js"></script>
+
 </body>
 </html>
