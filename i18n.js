@@ -138,7 +138,7 @@
 
       /* ─────────── CONTACT ─────────── */
       'contact.headline':      'Fatti sentire',
-      'contact.opt1.title':    'Collaborazioni &amp; Eventi privati',
+      'contact.opt1.title':    'Collaborazioni &amp; Eventi',
       'contact.opt1.sub':      'Vuoi portare HardKoro al tuo team o collaborare con noi?',
       'contact.opt1.btn':      'Parliamoci →',
       'contact.opt2.title':    'Richieste media',
@@ -265,7 +265,7 @@
 
       /* ─────────── CONTACT ─────────── */
       'contact.headline':      'Make yourself heard',
-      'contact.opt1.title':    'Collaborations &amp; Private events',
+      'contact.opt1.title':    'Collaborations &amp; Events',
       'contact.opt1.sub':      'Want to bring HardKoro to your team or collaborate with us?',
       'contact.opt1.btn':      'Let\'s talk →',
       'contact.opt2.title':    'Media enquiries',
